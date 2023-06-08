@@ -1,0 +1,25 @@
+Files Description:
+
+NOTE:  BEFORE USE - ALL .php files will need to have your server's username/password added.
+
+
+CloudRequest.html - A simple HTML file where someone can request a specific word cloud be generated based on the Patient Expert ID#. 
+
+createDB.php - This file will create a new database on localhost named patient_expert_survey. If the DB can not be created, an error message will be shown.  To use: Fill in system user name and password in the fields below. Change the port #3306 to correct port for your mysql DB installation. Once these have been altered, simply open this page in a browser on the server.
+
+createTable.php - This file will create a table in the DB named patient_expert. This is where the data will be stored each time the form is filled out by a user.  If the form is edited in the future, any changes to variable names in the form will also need to be updated here and a new table generated or the old table overwritten. Instructions in file.
+
+d3.layout.cloud.js - JavaScript library used to generate the word cloud. Created by Jason Davies in 2013, used with permission. All comments inside file must remain inside file.
+
+form.html - Patient Expert Survey form. Used to gather information from the user. Any edits to the variable names within the form will also alter the way data is placed inside the DB, so files that would need to be updated in tandem are createTable.php, insertData.php, and USC_WordCloudGenerator.php. If variable names remain unchanged, any other modifications should affect only this file.
+
+index.html - quick and easy way to get to the above files - includes form, cloud request, viewing all patients and ID's in DB, as well as the one-time use files to create the database and table within it.
+
+insertData.php - This file will add data from the form to the database named 'patient_expert_survey' into the table named 'patient_expert'. If any modifications are made to the variable names in form.html, this file should also be updated.
+
+style.css - stylesheet to provide colors/backgrounds for form pages and word cloud.
+
+USC_WordCloudGenerator.php - Uses the javascript library and words from database to generate a word cloud. 
+
+viewDBEntries.php - creates a table of all database entries with the name, email, and id of each patient as well as a button to generate a word cloud for each one.
+

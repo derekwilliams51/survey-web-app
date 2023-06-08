@@ -1,0 +1,4853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>
+		Patient Expert Survey
+	</title>
+</head>
+
+<body>
+
+	<img src="imgs/patient_engage_studio_subunit_RGB_2C.jpg">
+	<h1>Patient Expert Survey</h1>
+
+	<!-- Create Form -->
+	<form id="form" action="insertData.php" method="post">
+
+		<!-- Details -->
+		<div class="form-control">
+			<label for="first_name" id="label-first_name">
+				First name
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="text"
+				id="first_name"
+				placeholder="Enter your first name" name="first_name" />
+		</div>
+
+		<div class="form-control">
+			<label for="last_name" id="label-last_name">
+				Last name
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="text"
+				id="last_name"
+				placeholder="Enter your last name" name="last_name" />
+		</div>
+
+		<div class="form-control">
+			<label for="email" id="label-email">
+				Email
+			</label>
+
+			<!-- Input Type Email-->
+			<input type="email"
+				id="email"
+				placeholder="Enter your email" name="email" />
+		</div>
+
+		<div class="form-control">
+			<label>What perspective(s) do you bring to the Patient Engagement Studio?
+				<small>Select all that apply</small>
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="patient">
+				<input type="checkbox"
+					name="perspectives[]" value="patient" onchange="showHideSlider(this, 'patientSlider');">Patient</input></label>
+        
+                <div id="patientSlider" style="display: none;">
+        	       <div class="slider" id="patient_slider">
+	                   <label> How much of an impact has this had on you? 
+			           <small>(5 being the most impactful and 0 being the least)</small></label> 
+	                    <input type='range' min='0' max='5' value='0' id='patient_slider' name="patient_slider" step='1' list='patient_slider_number' oninput="patient_slider_value.innerText = this.value">
+	                   <datalist id='patient_slider_number'>
+                           <option>0</option>
+	                       <option>1</option>
+	                       <option>2</option>
+                           <option>3</option>
+	                       <option>4</option>
+	                       <option>5</option>
+	                   </datalist>
+			         <label id="patient_slider_value">0</label>
+                    </div>
+                </div>
+        
+        
+			<label for="caregiver">
+				<input type="checkbox"
+					name="perspectives[]" value="caregiver" onchange="showHideSlider(this, 'caregiverSlider');">Caregiver</input></label>
+    
+                <div id="caregiverSlider" style="display: none;">
+        	       <div class="slider" id="caregiver_slider">
+	                   <label> How much of an impact has this had on you? 
+			           <small>(5 being the most impactful and 0 being the least)</small></label> 
+	                   <input type='range' min='0' max='5' value='0' id='caregiver_slider' name="caregiver_slider" step='1' list='caregiver_slider_number' oninput="caregiver_slider_value.innerText = this.value">
+	                   <datalist id='caregiver_slider_number'>
+                           <option>0</option>
+	                       <option>1</option>
+	                       <option>2</option>
+                           <option>3</option>
+	                       <option>4</option>
+	                       <option>5</option>
+	                   </datalist>
+                       <label id="caregiver_slider_value">0</label>
+                    </div>
+                </div>
+    
+			<label for="communityMember">
+				<input type="checkbox"
+					name="perspectives[]" value="community member" onchange="showHideSlider(this, 'communityMemberSlider');">Community member</input></label>
+    
+                <div id="communityMemberSlider" style="display: none;">
+        	       <div class="slider" id="communityMember_slider">
+	                   <label> How much of an impact has this had on you? 
+			           <small>(5 being the most impactful and 0 being the least)</small></label> 
+	                   <input type='range' min='0' max='5' value='0' id='communityMember_slider' name="communityMember_slider" step='1' list='communityMember_slider_number' oninput="communityMember_slider_value.innerText = this.value">
+	                   <datalist id='communityMember_slider_number'>
+                           <option>0</option>
+	                       <option>1</option>
+	                       <option>2</option>
+                           <option>3</option>
+	                       <option>4</option>
+	                       <option>5</option>
+	                   </datalist>
+                       <label id="communityMember_slider_value">0</label>
+                    </div>
+                </div>
+    
+			<label for="communityPartner">
+				<input type="checkbox"
+					name="perspectives[]" value="community partner" onchange="showHideSlider(this, 'communityPartnerSlider');">Community Partner</input></label>
+
+                <div id="communityPartnerSlider" style="display: none;">
+        	       <div class="slider" id="communityPartner_slider">
+	                   <label> How much of an impact has this had on you? 
+			           <small>(5 being the most impactful and 0 being the least)</small></label> 
+	                   <input type='range' min='0' max='5' value='0' id='communityPartner_slider' name="communityPartner_slider" step='1' list='communityPartner_slider_number' oninput="communityPartner_slider_value.innerText = this.value">
+	                   <datalist id='communityPartner_slider_number'>
+                           <option>0</option>
+	                       <option>1</option>
+	                       <option>2</option>
+                           <option>3</option>
+	                       <option>4</option>
+	                       <option>5</option>
+	                   </datalist>
+                       <label id="communityPartner_slider_value">0</label>
+                    </div>
+                </div>
+
+			<label for="healthcareWorker">
+				<input type="checkbox"
+					name="perspectives[]" value="healthcare worker"  onchange="showHideSlider(this, 'healthcareWorkerSlider');">Healthcare worker</input></label>
+
+                <div id="healthcareWorkerSlider" style="display: none;">
+        	       <div class="slider" id="healthcareWorker_slider">
+	                   <label> How much of an impact has this had on you? 
+			           <small>(5 being the most impactful and 0 being the least)</small></label> 
+	                   <input type='range' min='0' max='5' value='0' id='healthcareWorker_slider' name="healthcareWorker_slider" step='1' list='healthcareWorker_slider_number' oninput="healthcareWorker_slider_value.innerText = this.value">
+	                   <datalist id='healthcareWorker_slider_number'>
+                           <option>0</option>
+	                       <option>1</option>
+	                       <option>2</option>
+                           <option>3</option>
+	                       <option>4</option>
+	                       <option>5</option>
+	                   </datalist>
+                       <label id="healthcareWorker_slider_value">0</label>
+                    </div>
+                </div>
+
+			<label for="researcher">
+				<input type="checkbox"
+					name="perspectives[]" value="researcher"  onchange="showHideSlider(this, 'researcherSlider');">Researcher</input></label>
+
+                <div id="researcherSlider" style="display: none;">
+        	       <div class="slider" id="researcher_slider">
+	                   <label> How much of an impact has this had on you? 
+			           <small>(5 being the most impactful and 0 being the least)</small></label> 
+	                   <input type='range' min='0' max='5' value='0' id='researcher_slider' name="researcher_slider" step='1' list='researcher_slider_number' oninput="researcher_slider_value.innerText = this.value">
+	                   <datalist id='researcher_slider_number'>
+                           <option>0</option>
+	                       <option>1</option>
+	                       <option>2</option>
+                           <option>3</option>
+	                       <option>4</option>
+	                       <option>5</option>
+	                   </datalist>
+                       <label id="researcher_slider_value">0</label>
+                    </div>
+                </div>
+
+			<label for="clinician">
+				<input type="checkbox"
+					name="perspectives[]" value="clinician" onchange="showHideSlider(this, 'clinicianSlider');">Clinician</input></label>
+
+                <div id="clinicianSlider" style="display: none;">
+        	       <div class="slider" id="clinician_slider">
+	                   <label> How much of an impact has this had on you? 
+			           <small>(5 being the most impactful and 0 being the least)</small></label> 
+	                   <input type='range' min='0' max='5' value='0' id='clinician_slider' name="clinician_slider" step='1' list='clinician_slider_number' oninput="clinician_slider_value.innerText = this.value">
+	                   <datalist id='clinician_slider_number'>
+                           <option>0</option>
+	                       <option>1</option>
+	                       <option>2</option>
+                           <option>3</option>
+	                       <option>4</option>
+	                       <option>5</option>
+                       </datalist>
+                       <label id="clinician_slider_value">0</label>
+                    </div>
+                </div>
+
+			<label for="other">
+				<input type="checkbox"
+					name="perspectives[]" value="other"  onchange="showHideSlider(this, 'otherSlider');">Other</input></label>
+		</div>
+	
+		<!-- SECOND FORM -->
+        <div id="otherSlider" style="display: none;">
+		<div class="form-control">
+			<label for="perspectives_other">
+				Please describe.
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="perspectives_other" id="perspectives_other"
+				placeholder="" name="perspectives_other">
+			</textarea>
+            <br><br>
+		</div>
+            
+        	       <div class="slider" id="other_slider">
+	                   <label> How much of an impact has this had on you? 
+			           <small>(5 being the most impactful and 0 being the least)</small></label> 
+	                   <input type='range' min='0' max='5' value='0' id='other_slider' name="other_slider" step='1' list='other_slider_number' oninput="other_slider_value.innerText = this.value" >
+	                   <datalist id='other_slider_number'>
+                           <option>0</option>
+	                       <option>1</option>
+	                       <option>2</option>
+                           <option>3</option>
+	                       <option>4</option>
+	                       <option>5</option>
+                       </datalist>
+                       <label id="other_slider_value">0</label>
+                    </div>
+        </div>
+
+		<!-- -->
+
+		<div class="form-control">
+			<label for="date_of_birth" id="date_of_birth">
+				What is your date of birth?
+			</label>
+
+			<!-- Input Type Date -->
+			<input type="date" id="date_of_birth" name="date_of_birth" value="2023-08-23">
+		</div>
+
+		<div class="form-control">
+			<label>
+				Do you currently live in the United States?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="live_in_usa">
+				<input type="radio"
+					id="live_in_usa"
+					name="live_in_usa" value="yes" onclick="showStates();">Yes</input>
+			</label>
+			<label for="live_in_usa">
+				<input type="radio"
+					id="live_in_usa"
+					name="live_in_usa" value="no" onclick="hideStates();">No</input>
+			</label>
+		</div>
+
+		<!-- SECOND FORM -->
+        <div id="states" style="display: none;">
+		<div class="form-control">
+			<label for="state" id="state">
+				What state or US territory do you currently live in?
+			</label>
+			
+			<!-- Dropdown options -->
+			<select name="state" id="state">
+			    <option value=""></option>
+				<option value="alabama">Alabama</option>
+				<option value="alaska">Alaska</option>
+				<option value="arizona">Arizona</option>
+				<option value="arkansas">Arkansas</option>
+				<option value="california">California</option>
+				<option value="colorado">Colorado</option>
+				<option value="connecticut">Connecticut</option>
+				<option value="delaware">Delaware</option>
+				<option value="district of columbia">District of Columbia</option>
+				<option value="florida">Florida</option>
+				<option value="georgia">Georgia</option>
+				<option value="hawaii">Hawaii</option>
+				<option value="idaho">Idaho</option>
+				<option value="illinois">Illinois</option>
+				<option value="indiana">Indiana</option>
+				<option value="iowa">Iowa</option>
+				<option value="kansas">Kansas</option>
+				<option value="kentucky">Kentucky</option>
+				<option value="louisiana">Louisiana</option>
+				<option value="maine">Maine</option>
+				<option value="maryland">Maryland</option>
+				<option value="massachusetts">Massachusetts</option>
+				<option value="michigan">Michigan</option>
+				<option value="minnesota">Minnesota</option>
+				<option value="mississippi">Mississippi</option>
+				<option value="missouri">Missourit</option>
+				<option value="montana">Montana</option>
+				<option value="nebraska">Nebraska</option>
+				<option value="nevada">Nevada</option>
+				<option value="new_hampshire">New Hampshire</option>
+				<option value="new_jersey">New Jersey</option>
+				<option value="new_mexico">New Mexico</option>
+				<option value="new_york">New York</option>
+				<option value="north_carolina">North Carolina</option>
+				<option value="north_dakota">North Dakota</option>
+				<option value="ohio">Ohio</option>
+				<option value="oklahoma">Oklahoma</option>
+				<option value="oregon">Oregon</option>
+				<option value="pennsylvania">Pennsylvania</option>
+				<option value="rhode_island">Rhode Island</option>
+				<option value="south_carolina">South Carolina</option>
+				<option value="south_dakota">South Dakota</option>
+				<option value="tennessee">Tennessee</option>
+				<option value="texas">Texas</option>
+				<option value="utah">Utah</option>
+				<option value="vermont">Vermont</option>
+				<option value="virginia">Virginia</option>
+				<option value="washington">Washington</option>
+				<option value="west virginia">West Virginia</option>
+				<option value="wisconsin">Wisconsin</option>
+				<option value="wyoming">Wyoming</option>
+				<option value="american_samoa">American Samoa</option>
+				<option value="guam">Guam</option>
+				<option value="northern_mariana_islands">Northern Mariana Islands</option>
+				<option value="puerto_rico">Puerto Rico</option>
+				<option value="virgin_islands">Virgin Islands</option>
+				<option value="armed_forces_africa">Armed Forces Africa</option>
+				<option value="armed_forces_americas">Armed Forces Americas</option>
+				<option value="armed_forces_canada">Armed Forces Canada</option>
+				<option value="armed_forces_europe">Armed Forces Europe</option>
+				<option value="armed_forces_middle_east">Armed Forces Middle East</option>
+				<option value="armed_forces_pacific">Armed Forces Pacific</option>
+				<option value="none_of_the_above">None of the above</option>
+				<option value="">Prefer not to answer</option>
+			</select>
+		</div>
+        </div>
+		<!-- -->
+
+		<div class="form-control">
+			<label>
+				Have you lived in a country other than the United State?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="lived_outside_usa">
+				<input type="radio"
+					id="lived_outside_usa"
+					name="lived_outside_usa" value="yes" onclick="showOutsideUS();">Yes</input>
+			</label>
+			<label for="lived_outside_usa">
+				<input type="radio"
+					id="lived_outside_usa"
+					name="lived_outside_usa" value="no" onclick="hideOutsideUS();">No</input>
+			</label>
+		</div>
+
+		<!-- SECOND FORM -->
+    <div id="outsideUS" style="display: none;">
+		<div class="form-control">
+			<label>What other countries have you lived in?
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Afghanistan">
+				<input type="checkbox"
+					name="other_countries[]" value="afghanistan">Afghanistan</input></label>
+			<label for="Akotiri">
+				<input type="checkbox"
+					name="other_countries[]" value="akotiri">Akotiri</input></label>
+			<label for="Albania">
+				<input type="checkbox"
+					name="other_countries[]" value="albania">Albania</input></label>
+			<label for="Algeria">
+				<input type="checkbox"
+					name="other_countries[]" value="algeria">Algeria</input></label>
+			<label for="American Samoa">
+				<input type="checkbox"
+					name="other_countries[]" value="american samoa">American Samoa</input></label>
+			<label for="Andorra">
+				<input type="checkbox"
+					name="other_countries[]" value="andorra">Andorra</input></label>
+			<label for="Angola">
+				<input type="checkbox"
+					name="other_countries[]" value="angola">Angola</input></label>
+			<label for="Anguilla">
+				<input type="checkbox"
+					name="other_countries[]" value="anguilla">Anguilla</input></label>
+			<label for="Antarctica">
+				<input type="checkbox"
+					name="other_countries[]" value="antarctica">Antarctica</input></label>
+			<label for="AntiguaandBarbuda">
+				<input type="checkbox"
+					name="other_countries[]" value="Antigua and Barbuda">Antigua and Barbuda</input></label>
+			<label for="Argentina">
+				<input type="checkbox"
+					name="other_countries[]" value="argentina">Argentina</input></label>
+			<label for="Armenia">
+				<input type="checkbox"
+					name="other_countries[]" value="armenia">Armenia</input></label>
+			<label for="Aruba">
+				<input type="checkbox"
+					name="other_countries[]" value="aruba">Aruba</input></label>
+			<label for="AshmoreandCartierIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="ashmore and cartier islands">Ashmore and Cartier Islands</input></label>
+			<label for="Australia">
+				<input type="checkbox"
+					name="other_countries[]" value="australia">Australia</input></label>
+			<label for="Austria">
+				<input type="checkbox"
+					name="other_countries[]" value="austria">Austria</input></label>
+			<label for="Azerbaijan">
+				<input type="checkbox"
+					name="other_countries[]" value="azerbaijan">Azerbaijan</input></label>
+			<label for="TheBahamas">
+				<input type="checkbox"
+					name="other_countries[]" value="the bahamas">The Bahamas</input></label>
+			<label for="Bahrain">
+				<input type="checkbox"
+					name="other_countries[]" value="bahrain">Bahrain</input></label>
+			<label for="Bangladesh">
+				<input type="checkbox"
+					name="other_countries[]" value="bangladesh">Bangladesh</input></label>
+			<label for="Barbados">
+				<input type="checkbox"
+					name"other_countries[]" value="barbados">Barbados</input></label>
+			<label for="BassasdaIndia">
+				<input type="checkbox"
+					name="other_countries[]" value="basses da india">Bassas da India</input></label>
+			<label for="Belarus">
+				<input type="checkbox"
+					name="other_countries[]" value="belarus">Belarus</input></label>
+			<label for="Belgium">
+				<input type="checkbox"
+					name="other_countries[]" value="belgium">Belgium</input></label>
+			<label for="Belize">
+				<input type="checkbox"
+					name="other_countries[]" value="belize">Belize</input></label>
+			<label for="Benin">
+				<input type="checkbox"
+					name="other_countries[]" value="benin">Benin</input></label>
+			<label for="Bermuda">
+				<input type="checkbox"
+					name="other_countries[]" value="bermuda">Bermuda</input></label>
+			<label for="Bhutan">
+				<input type="checkbox"
+					name="other_countries[]" value="bhutan">Bhutan</input></label>
+			<label for="Bolivia">
+				<input type="checkbox"
+					name="other_countries[]" value="bolivia">Bolivia</input></label>
+			<label for="BosniaandHerzegovina">
+				<input type="checkbox"
+					name="other_countries[]" value="bosnia and herzegovina">Bosnia and Herzegovina</input></label>
+			<label for="Botswana">
+				<input type="checkbox"
+					name="other_countries[]" value="botswana">Botswana</input></label>
+			<label for="Bouvet Island">
+				<input type="checkbox"
+					name="other_countries[]" value="bouvet island">Bouvet Island</input></label>
+			<label for="Brazil">
+				<input type="checkbox"
+					name="other_countries[]" value="brazil">Brazil</input></label>
+			<label for="BritishIndianOceanTerritory">
+				<input type="checkbox"
+					name="other_countries[]" value="british indian ocean territory">British Indian Ocean Territory</input></label>
+			<label for="BritishVirginIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="british virgin islands">British Virgin Islands</input></label>
+			<label for="Brunei">
+				<input type="checkbox"
+					name="other_countries[]" value="brunei">Brunei</input></label>
+			<label for="Bulgaria">
+				<input type="checkbox"
+					name="other_countries[]" value="bulgaria">Bulgaria</input></label>
+			<label for="BurkinaFaso">
+				<input type="checkbox"
+					name="other_countries[]" value="burkina faso">Burkina Faso</input></label>
+			<label for="Burma">
+				<input type="checkbox"
+					name="other_countries[]" value="burma">Burma</input></label>
+			<label for="Burundi">
+				<input type="checkbox"
+					name="other_countries[]" value="burundi">Burundi</input></label>
+			<label for="Cambodia">
+				<input type="checkbox"
+					name="other_countries[]" value="cambodia">Cambodia</input></label>
+			<label for="Cameroon">
+				<input type="checkbox"
+					name="other_countries[]" value="cameroon">Cameroon</input></label>
+			<label for="Canada">
+				<input type="checkbox"
+					name="other_countries[]" value="canada">Canada</input></label>
+			<label for="CapeVerde">
+				<input type="checkbox"
+					name="other_countries[]" value="cape verde">Cape Verde</input></label>
+			<label for="CaymanIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="cayman islands">Cayman Islands</input></label>
+			<label for="CentralAfricanRepublic">
+				<input type="checkbox"
+					name="other_countries[]" value="central african republic">Central African Republic</input></label>
+			<label for="Chad">
+				<input type="checkbox"
+					name="other_countries[]" value="chad">Chad</input></label>
+			<label for="Chile">
+				<input type="checkbox"
+					name="other_countries[]" value="chile">Chile</input></label>
+			<label for="China">
+				<input type="checkbox"
+					name="other_countries[]" value="china">China</input></label>
+			<label for="ChristmasIsland">
+				<input type="checkbox"
+					name="other_countries[]" value="christmas island">Christmas Island</input></label>
+			<label for="ClippertonIsland">
+				<input type="checkbox"
+					name="other_countries[]" value="clipperton island">Clipperton Island</input></label>
+			<label for="Cocos(Keeling)Islands">
+				<input type="checkbox"
+					name="other_countries[]" value="cocos islands">Cocos (Keeling) Islands</input></label>
+			<label for="Colombia">
+				<input type="checkbox"
+					name="other_countries[]" value="columbia">Colombia</input></label>
+			<label for="Comoros">
+				<input type="checkbox"
+					name="other_countries[]" value="comoros">Comoros</input></label>
+			<label for="DemocraticRepublicoftheCongo">
+				<input type="checkbox"
+					name="other_countries[]" value="democratic republic of the congo">Democratic Republic of the Congo</input></label>
+			<label for="RepublicoftheCongo">
+				<input type="checkbox"
+					name="other_countries[]" value="republic of the congo">Republic of the Congo</input></label>
+			<label for="CookIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="cook islands">Cook Islands</input></label>
+			<label for="CoralSeaIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="coral sea islands">Coral Sea Islands</input></label>
+			<label for="CostaRica">
+				<input type="checkbox"
+					name="other_countries[]" value="costa rica">Costa Rica</input></label>
+			<label for="Coted'Ivorie">
+				<input type="checkbox"
+					name="other_countries[]" value="cote d'ivoire">Cote d'Ivoire</input></label>
+			<label for="Croatia">
+				<input type="checkbox"
+					name="other_countries[]" value="croatioa">Croatia</input></label>
+			<label for="Cuba">
+				<input type="checkbox"
+					name="other_countries[]" value="cuba">Cuba</input></label>
+			<label for="Cyprus">
+				<input type="checkbox"
+					name="other_countries[]" value="cyprus">Cyprus</input></label>
+			<label for="CzechRepublic">
+				<input type="checkbox"
+					name="other_countries[]" value="czech republic">Czech Republic</input></label>
+			<label for="Denmark">
+				<input type="checkbox"
+					name="other_countries[]" value="denmark">Denmark</input></label>
+			<label for="Djibouti">
+				<input type="checkbox"
+					name="other_countries[]" value="djibouti">Djibouti</input></label>
+			<label for="Dominica">
+				<input type="checkbox"
+					name="other_countries[]" value="dominica">Dominica</input></label>
+			<label for="DominicanRepublic">
+				<input type="checkbox"
+					name="other_countries[]" value="dominican republic">Dominican Republic</input></label>
+			<label for="Ecuador">
+				<input type="checkbox"
+					name="other_countries[]" value="ecuador">Ecuador</input></label>
+			<label for="Egypt">
+				<input type="checkbox"
+					name="other_countries[]" value="egypt">Egypt</input></label>
+			<label for="ElSalvador">
+				<input type="checkbox"
+					name="other_countries[]" value="el salvador">El Salvador</input></label>
+			<label for="EquatorialGuinea">
+				<input type="checkbox"
+					name="other_countries[]" value="equatorial guinea">Equatorial Guinea</input></label>
+			<label for="Eritrea">
+				<input type="checkbox"
+					name="other_countries[]" value="eritrea">Eritrea</input></label>
+			<label for="Estonia">
+				<input type="checkbox"
+					name="other_countries[]" value="estonia">Estonia</input></label>
+			<label for="Ethiopia">
+				<input type="checkbox"
+					name="other_countries[]" value="ethiopia">Ethiopia</input></label>
+			<label for="EuropaIsland">
+				<input type="checkbox"
+					name="other_countries[]" value="europa island">Europa Island</input></label>
+			<label for="FalklandIslands(IslasMalvinas)">
+				<input type="checkbox"
+					name="other_countries[]" value="falkland islands">Falkland Islands (Islas Malvinas)</input></label>
+			<label for="FaroeIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="faroe islands">Faroe Islands</input></label>
+			<label for="Fiji">
+				<input type="checkbox"
+					name="other_countries[]" value="fiji">Fiji</input></label>
+			<label for="Finland">
+				<input type="checkbox"
+					name="other_countries[]" value="finland">Finland</input></label>
+			<label for="France">
+				<input type="checkbox"
+					name="other_countries[]" value="france">France</input></label>
+			<label for="FrenchGuinea">
+				<input type="checkbox"
+					name="other_countries[]" value="french guinea">French Guinea</input></label>
+			<label for="FrenchPolynesia">
+				<input type="checkbox"
+					name="other_countries[]" value="french polynesia">French Polynesia</input></label>
+			<label for="FrenchSouthernandAntarcticLands">
+				<input type="checkbox"
+					name="other_countries[]" value="french southern and antarctic lands">French Southern and Antarctic Lands</input></label>
+			<label for="Gabon">
+				<input type="checkbox"
+					name="other_countries[]" value="gabon">Gabon</input></label>
+			<label for="TheGambia">
+				<input type="checkbox"
+					name="other_countries[]" value="the gambia">The Gambia</input></label>
+			<label for="GazaStrip">
+				<input type="checkbox"
+					name="other_countries[]" value="gaza strip">Gaza Strip</input></label>
+			<label for="Georgia">
+				<input type="checkbox"
+					name="other_countries[]" value="georgia">Georgia</input></label>
+			<label for="Germany">
+				<input type="checkbox"
+					name="other_countries[]" value="germany">Germany</input></label>
+			<label for="Ghana">
+				<input type="checkbox"
+					name="other_countries[]" value="ghana">Ghana</input></label>
+			<label for="Gibraltar">
+				<input type="checkbox"
+					name="other_countries[]" value="gibraltar">Gibraltar</input></label>
+			<label for="GloriosoIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="glorioso islands">Glorioso Islands</input></label>
+			<label for="Greece">
+				<input type="checkbox"
+					name="other_countries[]" value="greece">Greece</input></label>
+			<label for="Greenland">
+				<input type="checkbox"
+					name="other_countries[]" value="greenland">Greenland</input></label>
+			<label for="Grenada">
+				<input type="checkbox"
+					name="other_countries[]" value="grenada">Grenada</input></label>
+			<label for="Guadeloupe">
+				<input type="checkbox"
+					name="other_countries[]" value="guadeloupe">Guadeloupe</input></label>
+			<label for="Guam">
+				<input type="checkbox"
+					name="other_countries[]" value="guam">Guam</input></label>
+			<label for="Guatemala">
+				<input type="checkbox"
+					name="other_countries[]" value="guatemala">Guatemala</input></label>
+			<label for="Guernsey">
+				<input type="checkbox"
+					name="other_countries[]" value="guernsey">Guernsey</input></label>
+			<label for="Guinea">
+				<input type="checkbox"
+					name="other_countries[]" value="guinea">Guinea</input></label>
+			<label for="Buinea-Bissau">
+				<input type="checkbox"
+					name="other_countries[]" value="guinea-bassau">Guinea-Bassau</input></label>
+			<label for="Guyana">
+				<input type="checkbox"
+					name="other_countries[]" value="guyana">Guyana</input></label>
+			<label for="Haiti">
+				<input type="checkbox"
+					name="other_countries[]" value="haiti">Haiti</input></label>
+			<label for="HeardIslandandMcDonaldIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="heard island and McDonald islands">Heard Island and McDonald Islands</input></label>
+			<label for="HolySee(VaticanCity)">
+				<input type="checkbox"
+					name="other_countries[]" value="holy see">Holy See (Vatican City)</input></label>
+			<label for="Honduras">
+				<input type="checkbox"
+					name="other_countries[]" value="honduras">Honduras</input></label>
+			<label for="HongKong">
+				<input type="checkbox"
+					name="other_countries[]" value="hong kong">Hong Kong</input></label>
+			<label for="Hungary">
+				<input type="checkbox"
+					name="other_countries[]" value="hungary">Hungary</input></label>
+			<label for="Iceland">
+				<input type="checkbox"
+					name="other_countries[]" value="iceland">Iceland</input></label>
+			<label for="India">
+				<input type="checkbox"
+					name="other_countries[]" value="india">India</input></label>
+			<label for="Indonesia">
+				<input type="checkbox"
+					name="other_countries[]" value="indonesia">Indonesia</input></label>
+			<label for="Iran">
+				<input type="checkbox"
+					name="other_countries[]" value="iran">Iran</input></label>
+			<label for="Iraq">
+				<input type="checkbox"
+					name="other_countries[]" value="iraq">Iraq</input></label>
+			<label for="Ireland">
+				<input type="checkbox"
+					name="other_countries[]" value="ireland">Ireland</input></label>
+			<label for="IsleofMan">
+				<input type="checkbox"
+					name="other_countries[]" value="isle of man">Isle of Man</input></label>
+			<label for="Israel">
+				<input type="checkbox"
+					name="other_countries[]" value="israel">Israel</input></label>
+			<label for="Italy">
+				<input type="checkbox"
+					name="other_countries[]" value="italy">Italy</input></label>
+			<label for="Jamaica">
+				<input type="checkbox"
+					name="other_countries[]" value="jamaica">Jamaica</input></label>
+			<label for="JanMayen">
+				<input type="checkbox"
+					name="other_countries[]" value="jan mayen">Jan Mayen</input></label>
+			<label for="Japan">
+				<input type="checkbox"
+					name="other_countries[]" value="japan">Japan</input></label>
+			<label for="Jersey">
+				<input type="checkbox"
+					name="other_countries[]" value="jersey">Jersey</input></label>
+			<label for="Jordan">
+				<input type="checkbox"
+					name="other_countries[]" value="jordan">Jordan</input></label>
+			<label for="JuandeNovaIsland">
+				<input type="checkbox"
+					name="other_countries[]" value="juan de nova island">Juan de Nova Island</input></label>
+			<label for="Kazakhstan">
+				<input type="checkbox"
+					name="other_countries[]" value="kazakhstan">Kazakhstan</input></label>
+			<label for="Kenya">
+				<input type="checkbox"
+					name="other_countries[]" value="kenya">Kenya</input></label>
+			<label for="Kiribati">
+				<input type="checkbox"
+					name="other_countries[]" value="kiribati">Kiribati</input></label>
+			<label for="Kuwait">
+				<input type="checkbox"
+					name="other_countries[]" value="kuwait">Kuwait</input></label>
+			<label for="Kyrgyzstan">
+				<input type="checkbox"
+					name="other_countries[]" value="kyrgyzstan">Kyrgyzstan</input></label>
+			<label for="Laos">
+				<input type="checkbox"
+					name="other_countries[]" value="laos">Laos</input></label>
+			<label for="Latvia">
+				<input type="checkbox"
+					name="other_countries[]" value="latvia">Latvia</input></label>
+			<label for="Lebanon">
+				<input type="checkbox"
+					name="other_countries[]" value="lebanon">Lebanon</input></label>
+			<label for="Lesotho">
+				<input type="checkbox"
+					name="other_countries[]" value="lesotho">Lesotho</input></label>
+			<label for="Liberia">
+				<input type="checkbox"
+					name="other_countries[]" value="liberia">Liberia</input></label>
+			<label for="Libya">
+				<input type="checkbox"
+					name="other_countries[]" value="libya">Libya</input></label>
+			<label for="Liechtenstein">
+				<input type="checkbox"
+					name="other_countries[]" value="liechtenstein">Liechtenstein</input></label>
+			<label for="Lithuania">
+				<input type="checkbox"
+					name="other_countries[]" value="lithuania">Lithuania</input></label>
+			<label for="Luxembourg">
+				<input type="checkbox"
+					name="other_countries[]" value="luxembourg">Luxembourg</input></label>
+			<label for="Macau">
+				<input type="checkbox"
+					name="other_countries[]" value="macau">Macau</input></label>
+			<label for="Macedonia">
+				<input type="checkbox"
+					name="other_countries[]" value="macedonia">Macedonia</input></label>
+			<label for="Madagascar">
+				<input type="checkbox"
+					name="other_countries[]" value="madagascar">Madagascar</input></label>
+			<label for="Malawi">
+				<input type="checkbox"
+					name="other_countries[]" value="malawi">Malawi</input></label>
+			<label for="Malaysia">
+				<input type="checkbox"
+					name="other_countries[]" value="malaysia">Malaysia</input></label>
+			<label for="Maldives">
+				<input type="checkbox"
+					name="other_countries[]" value="maldives">Maldives</input></label>
+			<label for="Mali">
+				<input type="checkbox"
+					name="other_countries[]" value="mali">Mali</input></label>
+			<label for="Malta">
+				<input type="checkbox"
+					name="other_countries[]" value="malta">Malta</input></label>
+			<label for="MarshallIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="marshall islands">Marshall Islands</input></label>
+			<label for="Martinique">
+				<input type="checkbox"
+					name="other_countries[]" value="martinique">Martinique</input></label>
+			<label for="Mauritania">
+				<input type="checkbox"
+					name="other_countries[]" value="mauritania">Mauritania</input></label>
+			<label for="Mauritius">
+				<input type="checkbox"
+					name="other_countries[]" value="mauritius">Mauritius</input></label>
+			<label for="Mayotte">
+				<input type="checkbox"
+					name="other_countries[]" value="mayotte">Mayotte</input></label>
+			<label for="Mexico">
+				<input type="checkbox"
+					name="other_countries[]" value="mexico">Mexico</input></label>
+			<label for="FederatedStatesof">
+				<input type="checkbox"
+					name="other_countries[]" value="federated states of micronesia">Federated States of Micronesia</input></label>
+			<label for="Moldova">
+				<input type="checkbox"
+					name="other_countries[]" value="moldova">Moldova</input></label>
+			<label for="Monaco">
+				<input type="checkbox"
+					name="other_countries[]" value="monaco">Monaco</input></label>
+			<label for="Mongolia">
+				<input type="checkbox"
+					name="other_countries[]" value="mongolia">Mongolia</input></label>
+			<label for="Montserrat">
+				<input type="checkbox"
+					name="other_countries[]" value="montserrat">Montserrat</input></label>
+			<label for="Morocco">
+				<input type="checkbox"
+					name="other_countries[]" value="morocco">Morocco</input></label>
+			<label for="Mozambique">
+				<input type="checkbox"
+					name="other_countries[]" value="mozambique">Mozambique</input></label>
+			<label for="Namibia">
+				<input type="checkbox"
+					name="other_countries[]" value="namibia">Namibia</input></label>
+			<label for="Nauru">
+				<input type="checkbox"
+					name="other_countries[]" value="nauru">Nauru</input></label>
+			<label for="NavassaIsland">
+				<input type="checkbox"
+					name="other_countries[]" value="navassa islands">Navassa Island</input></label>
+			<label for="Nepal">
+				<input type="checkbox"
+					name="other_countries[]" value="nepal">Nepal</input></label>
+			<label for="Netherlands">
+				<input type="checkbox"
+					name="other_countries[]" value="netherlands">Netherlands</input></label>
+			<label for="NetherlandsAntilles">
+				<input type="checkbox"
+					name="other_countries[]" value="netherlands antilles">Netherlands Antilles</input></label>
+			<label for="NewCaledonia">
+				<input type="checkbox"
+					name="other_countries[]" value="new caledonia">New Caledonia</input></label>
+			<label for="NewZealand">
+				<input type="checkbox"
+					name="other_countries[]" value="new zealand">New Zealand</input></label>
+			<label for="Nicaragua">
+				<input type="checkbox"
+					name="other_countries[]" value="nicaragua">Nicaragua</input></label>
+			<label for="Niger">
+				<input type="checkbox"
+					name="other_countries[]" value="niger">Niger</input></label>
+			<label for="Nigeria">
+				<input type="checkbox"
+					name="other_countries[]" value="nigeria">Nigeria</input></label>
+			<label for="Niue">
+				<input type="checkbox"
+					name="other_countries[]" value="niue">Niue</input></label>
+			<label for="NorfolkIsland">
+				<input type="checkbox"
+					name="other_countries[]" value="norfolk island">Norfolk Island</input></label>
+			<label for="NothernMarianaIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="northern mariana islands">Northern Mariana Islands</input></label>
+			<label for="NorthKorea">
+				<input type="checkbox"
+					name="other_countries[]" value="north korea">North Korea</input></label>
+			<label for="Norway">
+				<input type="checkbox"
+					name="other_countries[]" value="norway">Norway</input></label>
+			<label for="Oman">
+				<input type="checkbox"
+					name="other_countries[]" value="oman">Oman</input></label>
+			<label for="Pakistan">
+				<input type="checkbox"
+					name="other_countries[]" value="pakistan">Pakistan</input></label>
+			<label for="Palau">
+				<input type="checkbox"
+					name="other_countries[]" value="palau">Palau</input></label>
+			<label for="Panama">
+				<input type="checkbox"
+					name="other_countries[]" value="panama">Panama</input></label>
+			<label for="PapuaNewGuinea">
+				<input type="checkbox"
+					name="other_countries[]" value="papua new guinea">Papua New Guinea</input></label>
+			<label for="ParacelIsland">
+				<input type="checkbox"
+					name="other_countries[]" value="parcel island">Parcel Island</input></label>
+			<label for="Paraguay">
+				<input type="checkbox"
+					name="other_countries[]" value="paraguay">Paraguay</input></label>
+			<label for="Peru">
+				<input type="checkbox"
+					name="other_countries[]" value="peru">Peru</input></label>
+			<label for="Philippines">
+				<input type="checkbox"
+					name="other_countries[]" value="philippines">Philippines</input></label>
+			<label for="PitcairnIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="pitcairn islands">Pitcairn Islands</input></label>
+			<label for="Poland">
+				<input type="checkbox"
+					name="other_countries[]" value="poland">Poland</input></label>
+			<label for="Portugal">
+				<input type="checkbox"
+					name="other_countries[]" value="portugal">Portugal</input></label>
+			<label for="PuertoRico">
+				<input type="checkbox"
+					name="other_countries[]" value="puerto rico">Puerto Rico</input></label>
+			<label for="Qatar">
+				<input type="checkbox"
+					name="other_countries[]" value="qatar">Qatar</input></label>
+			<label for="Reunion">
+				<input type="checkbox"
+					name="other_countries[]" value="reunion">Reunion</input></label>
+			<label for="Romania">
+				<input type="checkbox"
+					name="other_countries[]" value="romania">Romania</input></label>
+			<label for="Russia">
+				<input type="checkbox"
+					name="other_countries[]" value="russia">Russia</input></label>
+			<label for="Rwanda">
+				<input type="checkbox"
+					name="other_countries[]" value="rwanda">Rwanda</input></label>
+			<label for="SaintHelena">
+				<input type="checkbox"
+					name="other_countries[]" value="saint helena">Saint Helena</input></label>
+			<label for="SaintKittsandNevis">
+				<input type="checkbox"
+					name="other_countries[]" value="saint kitts and nevis">Saint Kitts and Nevis</input></label>
+			<label for="SaintLucia">
+				<input type="checkbox"
+					name="other_countries[]" value="saint lucia">Saint Lucia</input></label>
+			<label for="SaintPierreandMiquelon">
+				<input type="checkbox"
+					name="other_countries[]" value="saint pierre and miquelon">Saint Pierre and Miquelon</input></label>
+			<label for="SaintVincentandtheGrenadines">
+				<input type="checkbox"
+					name="other_countries[]" value="saint vincent and the grenadines">Saint Vincent and the Grenadines</input></label>
+			<label for="Samoa">
+				<input type="checkbox"
+					name="other_countries[]" value="samoa">Samoa</input></label>
+			<label for="SanMarino">
+				<input type="checkbox"
+					name="other_countries[]" value="san marino">San Marino</input></label>
+			<label for="SaoTomeandPrincipe">
+				<input type="checkbox"
+					name="other_countries[]" value="san tome and principe">San Tome and Principe</input></label>
+			<label for="SaudiArabia">
+				<input type="checkbox"
+					name="other_countries[]" value="saudi arabia">Saudi Arabia</input></label>
+			<label for="Senegal">
+				<input type="checkbox"
+					name="other_countries[]" value="senegal">Senegal</input></label>
+			<label for="SerbiaandMontenegro">
+				<input type="checkbox"
+					name="other_countries[]" value="serbia and montenegro">Serbia and Montenegro</input></label>
+			<label for="Seychelles">
+				<input type="checkbox"
+					name="other_countries[]" value="seychelles">Seychelles</input></label>
+			<label for="SierraLeone">
+				<input type="checkbox"
+					name="other_countries[]" value="sierra leone">Sierra Leone</input></label>
+			<label for="Singapore">
+				<input type="checkbox"
+					name="other_countries[]" value="singapore">Singapore</input></label>
+			<label for="Slovakia">
+				<input type="checkbox"
+					name="other_countries[]" value="slovakia">Slovakia</input></label>
+			<label for="Slovenia">
+				<input type="checkbox"
+					name="other_countries[]" value="slovenia">Slovenia</input></label>
+			<label for="SolomonIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="solomon islands">Solomon Islands</input></label>
+			<label for="Somalia">
+				<input type="checkbox"
+					name="other_countries[]" value="somalia">Somalia</input></label>
+			<label for="SouthAfrica">
+				<input type="checkbox"
+					name="other_countries[]" value="south africa">South Africa</input></label>
+			<label for="SouthGeorgiaandtheSouthSandwichIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="south georgia and the south sandwich islands">South Georgia and the South Sandwich Islands</input></label>
+			<label for="SouthKorea">
+				<input type="checkbox"
+					name="other_countries[] value="south korea"">South Korea</input></label>
+			<label for="Spain">
+				<input type="checkbox"
+					name="other_countries[]" value="spain">Spain</input></label>
+			<label for="SpratlyIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="spratly islands">Spratly Islands</input></label>
+			<label for="SriLanka">
+				<input type="checkbox"
+					name="other_countries[]" value="sri lanka">Sri Lanka</input></label>
+			<label for="Sudan">
+				<input type="checkbox"
+					name="other_countries[]" value="sudan">Sudan</input></label>
+			<label for="Suriname">
+				<input type="checkbox"
+					name="other_countries[]" value="suriname">Suriname</input></label>
+			<label for="Svalbard">
+				<input type="checkbox"
+					name="other_countries[]" value="svalbard">Svalbard</input></label>
+			<label for="Swaziland">
+				<input type="checkbox"
+					name="other_countries[]" value="swaziland">Swaziland</input></label>
+			<label for="Sweden">
+				<input type="checkbox"
+					name="other_countries[]" value="sweden">Sweden</input></label>
+			<label for="Switzerland">
+				<input type="checkbox"
+					name="other_countries[]" value="switzerland">Switzerland</input></label>
+			<label for="Syria">
+				<input type="checkbox"
+					name="other_countries[]" value="syria">Syria</input></label>
+			<label for="Taiwan">
+				<input type="checkbox"
+					name="other_countries[]" value="taiwan">Taiwan</input></label>
+			<label for="Tajikistan">
+				<input type="checkbox"
+					name="other_countries[]" value="tajikistan">Tajikistan</input></label>
+			<label for="Tanzania">
+				<input type="checkbox"
+					name="other_countries[]" value="tanzania">Tanzania</input></label>
+			<label for="Thailand">
+				<input type="checkbox"
+					name="other_countries[]" value="thailand">Thailand</input></label>
+			<label for="Timor-Leste">
+				<input type="checkbox"
+					name="other_countries[]" value="timor">Timor-Leste</input></label>
+			<label for="Togo">
+				<input type="checkbox"
+					name="other_countries[]" value="togo">Togo</input></label>
+			<label for="Tokelau">
+				<input type="checkbox"
+					name="other_countries[]" value="tokelau">Tokelau</input></label>
+			<label for="Tonga">
+				<input type="checkbox"
+					name="other_countries[]" value="tonga">Tonga</input></label>
+			<label for="TrinidadandTobago">
+				<input type="checkbox"
+					name="other_countries[]" value="trinidad and tobago">Trinidad and Tobago</input></label>
+			<label for="TromelinIsland">
+				<input type="checkbox"
+					name="other_countries[]" value="tromelin island">Tromelin Island</input></label>
+			<label for="Tunisia">
+				<input type="checkbox"
+					name="other_countries[]" value="tunisia">Tunisia</input></label>
+			<label for="Turkey">
+				<input type="checkbox"
+					name="other_countries[]" value="turkey">Turkey</input></label>
+			<label for="Turkmenistan">
+				<input type="checkbox"
+					name="other_countries[]" value="turkmenistan">Turkmenistan</input></label>
+			<label for="TurksandCaicosIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="turks and caicos islands">Turks and Caicos Islands</input></label>
+			<label for="Tuvalu">
+				<input type="checkbox"
+					name="other_countries[]" value="tuvalu">Tuvalu</input></label>
+			<label for="Uganda">
+				<input type="checkbox"
+					name="other_countries[]" value="uganda">Uganda</input></label>
+			<label for="Ukraine">
+				<input type="checkbox"
+					name="other_countries[]" value="ukraine">Ukraine</input></label>
+			<label for="UnitedArabEmirates">
+				<input type="checkbox"
+					name="other_countries[]" value="united arab emirates">United Arab Emirates</input></label>
+			<label for="UnitedKingdom">
+				<input type="checkbox"
+					name="other_countries[]" value="united kingdom">United Kingdom</input></label>
+			<label for="UnitedStates">
+				<input type="checkbox"
+					name="other_countries[]" value="united states">United States</input></label>
+			<label for="Uruguay">
+				<input type="checkbox"
+					name="other_countries[]" value="uruguay">Uruguay</input></label>
+			<label for="Uzbekistan">
+				<input type="checkbox"
+					name="other_countries[]" value="uzbekistan">Uzbekistan</input></label>
+			<label for="Vanuatu">
+				<input type="checkbox"
+					name="other_countries[]" value="vanuatu">Vanuatu</input></label>
+			<label for="Venezuela">
+				<input type="checkbox"
+					name="other_countries[]" value="venezuela">Venezuela</input></label>
+			<label for="Vietnam">
+				<input type="checkbox"
+					name="other_countries[]" value="vietnam">Vietnam</input></label>
+			<label for="VirginIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="virgin islands">Virgin Islands</input></label>
+			<label for="WakeIslands">
+				<input type="checkbox"
+					name="other_countries[]" value="wake islands">Wake Islands</input></label>
+			<label for="WallisandFutuna">
+				<input type="checkbox"
+					name="other_countries[]" value="wallis and futuna">Wallis and Futuna</input></label>
+			<label for="WestBank">
+				<input type="checkbox"
+					name="other_countries[]" value="west bank">West Bank</input></label>
+			<label for="WesternSahara">
+				<input type="checkbox"
+					name="other_countries[]" value="western sahara">Western Sahara</input></label>
+			<label for="Yemen">
+				<input type="checkbox"
+					name="other_countries[]" value="yemen">Yemen</input></label>
+			<label for="Zambia">
+				<input type="checkbox"
+					name="other_countries[]" value="zambia">Zambia</input></label>
+			<label for="Zimbabwe">
+				<input type="checkbox"
+					name="other_countries[]" value="zimbabwe">Zimbabwe</input></label>
+		</div>
+    </div>
+		<!-- -->
+
+		<div class="form-control">
+			<label>What categories describe you?
+				<small>Select all that apply. Note, you may select more than one group.</small>
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="AmericanIndianorAlaskaNative">
+				<input type="checkbox"
+					name="categories[]" value="american indian or alaska native" onchange="showHide(this,'AmericanIndianorAlsaka');showHide(this,'tribeCategories');">American Indian or Alaska Native (for example:Aztec, Blackfeet Tribe, Mayan, Navajo Nation, Native Village of Barrow Inupiat Traditional Government, Nome Eskimo Community, etc.)</input></label>
+
+<!-- hidden sections for American Indian or Alaska Native -->
+
+    <div id="AmericanIndianorAlsaka" style="display:none;">
+		<div class="form-control">
+			<label>
+				<small>Select all that apply</small>
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="AmericanIndian">
+				<input type="checkbox"
+					name="categories[]" value="american indian">American Indian</input></label>
+			<label for="Alaska Native">
+				<input type="checkbox"
+					name="categories[]" value="alaska native">Alaska Native</input></label>
+			<label for="CentralorSouthAmericanIndian">
+				<input type="checkbox"
+					name="categories[]" value="central or south american indian">Central or South American Indian</input></label>
+			<label for="Noneofthesefullydescribeme">
+				<input type="checkbox"
+					name="categories[]" value="none of these fully describe me">None of these fully describe me</input></label>
+
+    <div id="tribeCategories" style="display:none;">
+		<div class="form-control">
+			<label for="categories_tribe">
+				Provide the name of the tribe in which you are enrolled or affiliated or your tribal descent. (For example, Navajo Nation, Blackfeet Tribe, Mayan, Aztec, Native Village of Barrow Inupiat Traditional Government, Nome Eskimo Community, etc.)
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="categories_tribe" id="categories_tribe"
+				placeholder="" name="categories_tribe">
+			</textarea>
+		</div>
+    </div>
+		</div>
+    </div>
+
+		<!-- THIRD FORM -->
+
+<div id="DoNotKnowWhereThisGoes" style="display:none;">
+		<div class="form-control">
+			<label for="categories_other">
+				Please specify
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="categories_other" id="categories_other"
+				placeholder="" name="categories_other">
+			</textarea>
+		</div>
+</div>
+
+<!--   -->
+
+			<label for="Asian">
+				<input type="checkbox"
+					name="categories[]" value="asian" onchange="showHide(this,'asian');">Asian</input></label>
+
+<!-- Hidden sections for Asian Choice -->
+    <div id="asian" style="display:none;">
+		<div class="form-control">
+			<label>
+				<small>Select all that apply</small>
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="AsianIndian">
+				<input type="checkbox"
+					name="categories[]" value="asian indian">Asian Indian</input></label>
+			<label for="Cambodian">
+				<input type="checkbox"
+					name="categories[]" value="cambodian">Cambodian</input></label>
+			<label for="Chinese">
+				<input type="checkbox"
+					name="categories[]" value="chinese">Chinese</input></label>
+			<label for="Filipino">
+				<input type="checkbox"
+					name="categories[]" value="filipino">Filipino</input></label>
+			<label for="Hmong">
+				<input type="checkbox"
+					name="categories[]" value="hmong">Hmong</input></label>
+			<label for="Japanese">
+				<input type="checkbox"
+					name="categories[]" value="japanese">Japanese</input></label>
+			<label for="Korean">
+				<input type="checkbox"
+					name="categories[]" value="korean">Korean</input></label>
+			<label for="Pakistani">
+				<input type="checkbox"
+					name="categories[]" value="pakistani">Pakistani</input></label>
+			<label for="Vietnamese">
+				<input type="checkbox"
+					name="categories[]" value="vietnamese">Vietnamese</input></label>
+			<label for="Noneofthesefullydescribeme">
+				<input type="checkbox"
+					name="categories[]" value="none of these fully describe me" onchange="showHide(this,'otherAsian');">None of these fully describe me</input></label>
+    <div id="otherAsian" style="display:none">
+		<div class="form-control">
+			<label for="categories_other">
+				How would you describe yourself?
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="categories_other" id="categories_other"
+				placeholder="" name="categories_other">
+			</textarea>
+		</div>
+    </div>
+
+		</div>
+    </div>
+
+		<!-- -->
+
+
+			<label for="BlackAfricanAmericanorAfrican">
+				<input type="checkbox"
+					name="categories[]" value="black, african american or african" onchange="showHide(this,'african');">Black, African American or African</input></label>
+
+    <div id="african" style="display:none";>
+        <div class="form-control">
+			<label>
+				<small>Select all that apply</small>
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="African American">
+				<input type="checkbox"
+					name="categories[]" value="african american">African American</input></label>
+			<label for="Barbadian">
+				<input type="checkbox"
+					name="categories[]" value="barbadian">Barbadian</input></label>
+			<label for="Caribbean">
+				<input type="checkbox"
+					name="categories[]" value="caribbean">Caribbean</input></label>
+			<label for="Ethiopian">
+				<input type="checkbox"
+					name="categories[]" value="ethiopian">Ethiopian</input></label>
+			<label for="Ghanaian">
+				<input type="checkbox"
+					name="categories[]" value="ghanaian">Ghanaian</input></label>
+			<label for="Haitian">
+				<input type="checkbox"
+					name="categories[]" value="haitian">Haitian</input></label>
+			<label for="Jamaican">
+				<input type="checkbox"
+					name="categories[]" value="jamaican">Jamaican</input></label>
+			<label for="Liberian">
+				<input type="checkbox"
+					name="categories[]" value="liberian">Liberian</input></label>
+			<label for="Nigerian">
+				<input type="checkbox"
+					name="categories[]" value="nigerian">Nigerian</input></label>
+			<label for="Somali">
+				<input type="checkbox"
+					name="categories[]" value="somali">Somali</input></label>
+			<label for="SouthAfrican">
+				<input type="checkbox"
+					name="categories[]" value="south african">South African</input></label>
+			<label for="Noneofthesefullydescribeme">
+				<input type="checkbox"
+					name="categories[]" value="none of these fully describe me" onchange="showHide(this,'africanOther');">None of these fully describe me</input></label>
+
+    <div id="africanOther" style="display: none;">
+		<div class="form-control">
+			<label for="categories_other">
+				Please specify
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="categories_other" id="categories_other"
+				placeholder="" name="categories_other">
+			</textarea>
+		</div>
+    </div>
+
+		</div>
+    </div>
+
+
+
+			<label for="HispanicLatinoorSpanish">
+				<input type="checkbox"
+					name="categories[]" value="hispanic, latino, or spanish" onchange="showHide(this,'hispanic');">Hispanic, Latino, or Spanish (for example: Columbian, Cuban, Dominican, Mexican or Mexican American, Puerto Rican, Salvadoran, etc.)</input></label>
+
+
+    <div id="hispanic" style="display:none;">
+		<div class="form-control">
+			<label>
+				<small>Select all that apply</small>
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Colombian">
+				<input type="checkbox"
+					name="categories[]" value="colombian">Colombian</input></label>
+			<label for="Cuban">
+				<input type="checkbox"
+					name="categories[]" value="cuban">Cuban</input></label>
+			<label for="Dominican">
+				<input type="checkbox"
+					name="categories[]" value="dominican">Dominican</input></label>
+			<label for="Ecuadorian">
+				<input type="checkbox"
+					name="categories[]" value="ecuadorian">Ecuadorian</input></label>
+			<label for="Honduran">
+				<input type="checkbox"
+					name="categories[]" value="honduran">Honduran</input></label>
+			<label for="MexicanorMexicanAmerican">
+				<input type="checkbox"
+					name="categories[]" value="mexican or mexican american">Mexican or Mexican American</input></label>
+			<label for="PuertoRican">
+				<input type="checkbox"
+					name="categories[]" value="puerto rican">Puerto Rican</input></label>
+			<label for="Salvadoran">
+				<input type="checkbox"
+					name="categories[]" value="salvadoran">Salvadoran</input></label>
+			<label for="Spanish">
+				<input type="checkbox"
+					name="categories[]" value="spanish">Spanish</input></label>
+			<label for="Noneofthesefullydescribeme">
+				<input type="checkbox"
+					name="categories[]" value="none of these fully describe me" onchange="showHide(this,'hispanicOther');">None of these fully describe me</input></label>
+    <div id="hispanicOther" style="display:none;">
+		<div class="form-control">
+			<label for="categories_other">
+				Please specify
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="categories_other" id="categories_other"
+				placeholder="" name="categories_other">
+			</textarea>
+		</div>
+    </div>
+
+		</div>		
+    </div>
+
+		<!-- -->
+
+			<label for="MiddleEasternorNorthAfrican">
+				<input type="checkbox"
+					name="categories[]" value="middle eastern or north african" onchange="showHide(this,'middleEasternorNorthAfrican');">Middle Eastern or North African (for example: Algerian, Egyptian, Iranian, Lebanese, Moroccan, Syrian, etc.)</input></label>
+
+
+    <div id="middleEasternorNorthAfrican" style="display:none;">
+		<div class="form-control">
+			<label>
+				<small>Select all that apply</small>
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Afghan">
+				<input type="checkbox"
+					name="categories[]" value="afghan">Afghan</input></label>
+			<label for="Algerian">
+				<input type="checkbox"
+					name="categories[]" value="algerian">Algerian</input></label>
+			<label for="Egyptian">
+				<input type="checkbox"
+					name="categories[]" value="egyptian">Egyptian</input></label>
+			<label for="Iranian">
+				<input type="checkbox"
+					name="categories[]" value="iranian">Iranian</input></label>
+			<label for="Iraqi">
+				<input type="checkbox"
+					name="categories[]" value="iraqi">Iraqi</input></label>
+			<label for="Israeli">
+				<input type="checkbox"
+					name="categories[]" value="israeli">Israeli</input></label>
+			<label for="Lebanese">
+				<input type="checkbox"
+					name="categories[]" value="lebanese">Lebanese</input></label>
+			<label for="Moroccan">
+				<input type="checkbox"
+					name="categories[]" value="moroccan">Moroccan</input></label>
+			<label for="Syrian">
+				<input type="checkbox"
+					name="categories[]" value="syrian">Syrian</input></label>
+			<label for="Tunisian">
+				<input type="checkbox"
+					name="categories[]" value="tunisian">Tunisian</input></label>
+			<label for="Noneofthesefullydescribeme">
+				<input type="checkbox"
+					name="categories[]" value="none of these fully describe me" onchange="showHide(this,'midEastOther');">None of these fully describe me</input></label>
+
+    <div id="midEastOther" style="display:none;">
+		<div class="form-control">
+			<label for="categories_other">
+				Please give a description:
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="categories_other" id="categories_other"
+				placeholder="" name="categories_other">
+			</textarea>
+		</div>
+    </div>
+
+		</div>
+    </div>
+
+		<!-- -->
+
+			<label for="NativeHawaiianorotherPacificIslander">
+				<input type="checkbox"
+					name="categories[]" value="native hawaiian or other pacific islander" onchange="showHide(this,'hawaiiian');">Native Hawaiian or other Pacific Islander (for example: Chamorro, Fijian, Marshallese, Native Hawaiian, Tongan, etc.)</input></label>
+
+
+    <div id="hawaiiian" style="display:none">
+		<div class="form-control">
+			<label>
+				<small>Select all that apply</small>
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Chamorro">
+				<input type="checkbox"
+					name="categories[]" value="chamorro">Chamorro</input></label>
+			<label for="Chuukese">
+				<input type="checkbox"
+					name="categories[]" value="chuukese">Chuukese</input></label>
+			<label for="Fijian">
+				<input type="checkbox"
+					name="categories[]" value="fijian">Fijian</input></label>
+			<label for="Marshallese">
+				<input type="checkbox"
+					name="categories[]" value="marshallese">Marshallese</input></label>
+			<label for="NativeHawaiian">
+				<input type="checkbox"
+					name="categories[]" value="native hawaiian">Native Hawaiian</input></label>
+			<label for="Palauan">
+				<input type="checkbox"
+					name="categories[]" value="palauan">Palauan</input></label>
+			<label for="Samoan">
+				<input type="checkbox"
+					name="categories[]" value="samoan">Samoan</input></label>
+			<label for="Tahitian">
+				<input type="checkbox"
+					name="categories[]" value="tahitian">Tahitian</input></label>
+			<label for="Tongan">
+				<input type="checkbox"
+					name="categories[]" value="tongan">Tongan</input></label>
+			<label for="Noneofthesefullydescribeme">
+				<input type="checkbox"
+					name="categories[]" value="none of these fully describe me" onchange="showHide(this,'otherHawaiian');">None of these fully describe me</input></label>
+    <div id="otherHawaiian" style="display:none;">
+		<div class="form-control">
+			<label for="categories_other">
+				Please give a description:
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="categories_other" id="categories_other"
+				placeholder="" name="categories_other">
+			</textarea>
+		</div>
+    </div>
+
+
+		</div>
+    </div>
+
+		<!-- -->
+
+
+			<label for="South American">
+				<input type="checkbox"
+					name="categories[]" value="south american" onchange="showHide(this,'southAmerican');">South American</input></label>
+
+    <div id="southAmerican" style="display:none;">
+		<div class="form-control">
+			<label>
+				<small>Select all that apply</small>
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Asian">
+				<input type="checkbox"
+					name="categories[]" value="asian">Asian</input></label>
+			<label for="Black">
+				<input type="checkbox"
+					name="categories[]" value="black">Black</input></label>
+			<label for="Hispanic">
+				<input type="checkbox"
+					name="categories[]" value="hispanic">Hispanic</input></label>
+			<label for="Indigenous">
+				<input type="checkbox"
+					name="categories[]" value="indigenous">Indigenous</input></label>
+			<label for="Portuguese">
+				<input type="checkbox"
+					name="categories[]" value="portuguese">Portuguese</input></label>
+			<label for="White">
+				<input type="checkbox"
+					name="categories[]" value="white">White</input></label>
+			<label for="Other">
+				<input type="checkbox"
+					name="categories[]" value="other" onchange="showHide(this,'southAmOther');">Other</input></label>
+
+    <div id="southAmOther" style="display:none";>
+        <div class="form-control">
+			<label for="categories_other">
+				Please specify
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="categories_other" id="categories_other"
+				placeholder="" name="categories_other">
+			</textarea>
+		</div>
+        
+    </div>
+
+		</div>
+    </div>
+
+		<!-- -->
+
+
+			<label for="White">
+				<input type="checkbox"
+					name="categories[]" value="white" onchange="showHide(this,'white');">White</input></label>
+
+    <div id="white" style="display:none;">
+		<div class="form-control">
+			<label>
+				<small>Select all that apply</small>
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Dutch">
+				<input type="checkbox"
+					name="categories[]" value="dutch">Dutch</input></label>
+			<label for="English">
+				<input type="checkbox"
+					name="categories[]" value="english">English</input></label>
+			<label for="European">
+				<input type="checkbox"
+					name="categories[]" value="european">European</input></label>
+			<label for="French">
+				<input type="checkbox"
+					name="categories[]" value="french">French</input></label>
+			<label for="German">
+				<input type="checkbox"
+					name="categories[]" value="german">German</input></label>
+			<label for="Irish">
+				<input type="checkbox"
+					name="categories[]" value="irish">Irish</input></label>
+			<label for="Italian">
+				<input type="checkbox"
+					name="categories[]" value="italian">Italian</input></label>
+			<label for="Norwegian">
+				<input type="checkbox"
+					name="categories[]" value="norwegian">Norwegian</input></label>
+			<label for="Polish">
+				<input type="checkbox"
+					name="categories[]" value="polish">Polish</input></label>
+			<label for="Scottish">
+				<input type="checkbox"
+					name="categories[]" value="scottish">Scottish</input></label>
+			<label for="Spanish">
+				<input type="checkbox"
+					name="categories[]" value="spanish">Spanish</input></label>
+			<label for="Noneofthesefullydescribeme">
+				<input type="checkbox"
+					name="categories[]" value="none of these fully describe me" onchange="showHide(this,'otherWhite');">None of these fully describe me</input></label>
+    <div id="otherWhite" style="display:none;">
+		<div class="form-control">
+			<label for="categories_other">
+				Please give a description:
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="categories_other" id="categories_other"
+				placeholder="" name="categories_other">
+			</textarea>
+		</div>
+    </div>
+
+		</div>
+    </div>
+
+		<!-- -->
+
+			<label for="Noneofthesefullydescribeme">
+				<input type="checkbox"
+					name="categories[]" value="none of these fully describe me" onchange="showHide(this,'categoryDescr');">None of these fully describe me</input></label>
+
+    <div id="categoryDescr" style="display:none;">
+		<div class="form-control">
+			<label for="categories_other">
+				What is your description?
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="categories_other" id="categories_other"
+				placeholder="" name="categories_other">
+			</textarea>
+		</div>
+    </div>
+
+			<label for="Prefernottoanswer">
+				<input type="checkbox"
+					name="categories[]" value="">Prefer not to answer</input></label>
+		</div>
+
+		<!-- -->
+
+
+		<div class="form-control">
+			<label>
+				What is your biological sex assigned at birth?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="biological_sex">
+				<input type="radio"
+					id="biological_sex"
+					name="biological_sex" value="male">Male</input>
+			</label>
+			<label for="biological_sex">
+				<input type="radio"
+					id="biological_sex"
+					name="biological_sex" value="female">Female</input>
+			</label>
+			<label for="biological_sex">
+				<input type="radio"
+					id="biological_sex"
+					name="biological_sex" value="intersex">Intersex</input>
+			</label>
+			<label for="biological_sex">
+				<input type="radio"
+					id="biological_sex"
+					name="biological_sex" value="">Prefer not to answer</input>
+			</label>
+		</div>
+
+		<div class="form-control">
+			<label>
+				What is your gender identity?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="gender_identity">
+				<input type="radio"
+					id="gender_identity"
+					name="gender_identity" value="man">Man</input>
+			</label>
+			<label for="gender_identity">
+				<input type="radio"
+					id="gender_identity"
+					name="gender_identity" value="woman">Woman</input>
+			</label>
+			<label for="gender_identity">
+				<input type="radio"
+					id="gender_identity"
+					name="gender_identity" value="genderqueer genderfluid">Genderqueer/Genderfluid</input>
+			</label>
+			<label for="gender_identity">
+				<input type="radio"
+					id="gender_identity"
+					name="gender_identity" value="">Prefer not to answer</input>
+			</label>
+		</div>
+
+
+		<div class="form-control">
+			<label>Do you identify with the LGBTQIA+ Community?
+			</label>
+			<!-- Input Type Radio Button -->
+			<label for="Gay">
+				<input type="radio" id="self_perception"
+					name="self_perception" value="LGBTQUI+">Yes</input></label>
+			<label for="Lesbian">
+				<input type="radio" id="self_perception"
+					name="self_perception" value="No">No</input></label>
+			<label for="Prefernottoanswer">
+				<input type="radio" id="self_perception"
+					name="self_perception" value="">Prefer not to answer</input></label>
+		</div>
+
+
+		<div class="form-control">
+			<label>
+				What is your current religious identity?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="religious_identity">
+				<input type="radio"
+					id="agnostic"
+					name="religious_identity" value="agnostic" onclick="showHideReligiousIdentity(this);">Agnostic</input>
+			</label>
+			<label for="religious_identity">
+				<input type="radio"
+					id="atheist"
+					name="religious_identity" value="atheist" onclick="showHideReligiousIdentity(this);">Atheist</input>
+			</label>
+			<label for="religious_identity">
+				<input type="radio"
+					id="bahai"
+					name="religious_identity" value="baha-i" onclick="showHideReligiousIdentity(this);">Baha'i</input>
+			</label>
+			<label for="religious_identity">
+				<input type="radio"
+					id="buddhist"
+					name="religious_identity" value="buddhist" onclick="showHideReligiousIdentity(this);">Buddhist</input>
+			</label>
+			<label for="religious_identity">
+				<input type="radio"
+					id="catholic"
+					name="religious_identity" value="catholic" onclick="showHideReligiousIdentity(this);">Catholic</input>
+			</label>
+			<label for="religious_identity">
+				<input type="radio"
+					id="hindu"
+					name="religious_identity" value="hindu" onclick="showHideReligiousIdentity(this);">Hindu</input>
+			</label>
+			<label for="religious_identity">
+				<input type="radio"
+					id="jewish"
+					name="religious_identity" value="jewish" onclick="showHideReligiousIdentity(this);">Jewish</input>
+			</label>
+			<label for="religious_identity">
+				<input type="radio"
+					id="mormon"
+					name="religious_identity" value="mormon" onclick="showHideReligiousIdentity(this);">Mormon</input>
+			</label>
+			<label for="religious_identity">
+				<input type="radio"
+					id="muslim"
+					name="religious_identity" value="muslim" onclick="showHideReligiousIdentity(this);">Muslim</input>
+			</label>
+			<label for="religious_identity">
+				<input type="radio"
+					id="protestant"
+					name="religious_identity" value="protestant" onclick="showHideReligiousIdentity(this);">Protestant(Baptist, Methodist, Pentecostalism, etc.)</input>
+			</label>
+			<label for="religious_identity">
+				<input type="radio"
+					id="sikhism"
+					name="religious_identity" value="sikhism" onclick="showHideReligiousIdentity(this);">Sikhism</input>
+			</label>
+			<label for="religious_identity">
+				<input type="radio"
+					id="other"
+					name="religious_identity" value="other" onclick="showHideReligiousIdentity(this);">Other</input>
+			</label>
+			<label for="religious_identity">
+				<input type="radio"
+					id="decline"
+					name="religious_identity" value="decline to answer" onclick="showHideReligiousIdentity(this);">Decline to Answer</input>
+			</label>
+		</div>
+
+		<!-- SECOND FORM -->
+    <div id="otherReligiousIdentity" style="display: none;">
+		<div class="form-control">
+			<label for="other_religious_identity">
+				What is your religious identity?
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="other_religious_identity" id="other_religious_identity"
+				placeholder="" name="other_religious_identity">
+			</textarea>
+		</div>
+    </div>
+		<!-- -->
+
+		<div class="form-control">
+			<label for="political_standing" id="political_standing">
+				What most closely represents your political standing?
+			</label>
+			
+			<!-- Dropdown options -->
+			<select name="political_standing" id="political_standing">
+				<option value="">Prefer not to answer</option>
+				<option value="very liberal">Very Liberal</option>
+				<option value="liberal">Liberal</option>
+				<option value="moderate liberal">Moderate Liberal</option>
+				<option value="moderate">Moderate</option>
+				<option value="moderate conservative">Moderate Conservative</option>
+				<option value="conservative">Conservative</option>
+				<option value="very conservative">Very Conservative</option>
+			</select>
+		</div>
+		
+		<div class="form-control">
+			<label>
+				Do you currently live in a rural area?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="current_live_rural">
+				<input type="radio"
+					id="yes_current_live_rural"
+					name="current_live_rural" value="yes" onclick="showHideNumberOfYears(this);">Yes</input>
+			</label>
+			<label for="current_live_rural">
+				<input type="radio"
+					id="no_current_live_rural"
+					name="current_live_rural" value="no" onclick="showHideNumberOfYears(this);">No</input>
+			</label>
+		</div>
+
+		<div class="form-control">
+			<label>
+				Have you ever lived in a rural area in the past?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="ever_live_rural">
+				<input type="radio"
+					id="yes_ever_live_rural"
+					name="ever_live_rural" value="yes" onclick="showHideNumberOfYears(this);">Yes</input>
+			</label>
+			<label for="ever_live_rural">
+				<input type="radio"
+					id="no_ever_live_rural"
+					name="ever_live_rural" value="no" onclick="showHideNumberOfYears(this);">No</input>
+			</label>
+		</div>
+
+		<!-- SECOND FORM -->
+    <div id="yearsLiveRural" style="display: none;">
+		<div class="form-control">
+			<label for="years_lived_rural">
+				How many years have/did you live in the rural area?
+			</label>
+
+			<!-- multi-line text input control -->
+            <input type="number" id="years_lived_rural" name="years_lived_rural">
+		</div>
+    </div>
+		<!-- -->
+
+		<div class="form-control">
+			<label>What is your current housing situation?
+				
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Own">
+				<input type="checkbox"
+					name="current_housing[]" value="own">Own</input></label>
+			<label for="Rent">
+				<input type="checkbox"
+					name="current_housing[]" value="rent">Rent</input></label>
+			<label for="Livingintemporaryhousing">
+				<input type="checkbox"
+					name="current_housing[]" value="living in temporary housing">Living in temporary housing</input></label>
+			<label for="Livingwithafamilymemberorfriend">
+				<input type="checkbox"
+					name="current_housing[]" value="living with a family member or friends">Living with a family member or friend</input></label>
+			<label for="Experiencinghomelessness">
+				<input type="checkbox"
+					name="current_housing[]" value="experiencing homelessness">Experiencing homelessness</input></label>
+			<label for="Other">
+				<input type="checkbox"
+					name="current_housing[]" value="other" onchange="showHide(this,'showOtherHousing');">Other</input></label>
+			<label for="Prefernottoanswer">
+				<input type="checkbox"
+					name="current_housing[]" value="">Prefer not to answer</input></label>
+		</div>
+
+		<!-- SECOND FORM -->
+    <div id="showOtherHousing" style="display: none;">
+		<div class="form-control">
+			<label for="other_current_housing">
+				How would you describe your current living situation?
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="other_current_housing" id="other_current_housing"
+				placeholder="" name="other_current_housing">
+			</textarea>
+		</div>
+    </div>
+		<!-- -->
+
+		<div class="form-control">
+			<label>What experiences do you have involving housing in the past?
+				<small>Check all that apply.</small>
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Owned">
+				<input type="checkbox"
+					name="housing_experiences[]" value="owned">Owned</input></label>
+			<label for="Rented">
+				<input type="checkbox"
+					name="housing_experiences[]" value="rented">Rented</input></label>
+			<label for="Livedintemporaryhousing">
+				<input type="checkbox"
+					name="housing_experiences[]" value="lived in temporary housing">Lived in temporary housing</input></label>
+			<label for="Livedwithafamilymemberorfriend">
+				<input type="checkbox"
+					name="housing_experiences[]" value="lived with a family member or friend">Lived with a family member or friend</input></label>
+			<label for="Experiencedhomelessness">
+				<input type="checkbox"
+					name="housing_experiences[]" value="experienced homelessness">Experiened homelessness</input></label>
+			<label for="Other">
+				<input type="checkbox"
+					name="housing_experiences[]" value="other" onchange="showHide(this,'otherHousingExperiences');">Other</input></label>
+
+		<!-- SECOND FORM -->
+    <div id="otherHousingExperiences" style="display: none;">
+		<div class="form-control">
+			<label for="other_housing_experiences">
+				How would you describe your past living situation(s)
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="other_housing_experiences" id="other_housing_experiences"
+				placeholder="" name="other_housing_experiences">
+			</textarea>
+		</div>
+    </div>
+		<!-- -->
+
+			<label for="Prefernottoanswer">
+				<input type="checkbox"
+					name="housing_experiences[]" value="">Prefer not to answer</input></label>
+		</div>
+
+
+
+		<div class="form-control">
+			<label>What is your current employment status?
+				<small>Select all that apply.</small>
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Employedforwages">
+				<input type="checkbox"
+					name="current_employment_status[]" value="employed for wages">Employed for wages (part-time or full-time)</input></label>
+			<label for="Self-employed">
+				<input type="checkbox"
+					name="current_employment_status[]" value="self-employed">Self-employed</input></label>
+			<label for="Outofworkforoneyearormore">
+				<input type="checkbox"
+					name="current_employment_status[]" value="out of work for 1 year or more">Out of work for 1 year or more</input></label>
+			<label for="Outofworkforlessthanoneyear">
+				<input type="checkbox"
+					name="current_employment_status[]" value="out of work for less than 1 year">Out of work for less than 1 year</input></label>
+			<label for="Homemaker">
+				<input type="checkbox"
+					name="current_employment_status[]" value="homemaker">Homemaker</input></label>
+			<label for="Student">
+				<input type="checkbox"
+					name="current_employment_status[]" value="student">Student</input></label>
+			<label for="Retired">
+				<input type="checkbox"
+					name="current_employment_status[]" value="retired">Retired</input></label>
+			<label for="Unabletowork">
+				<input type="checkbox"
+					name="current_employment_status[]" value="unable to work">Unable to work (disabled)</input></label>
+			<label for="Prefernottoanswer">
+				<input type="checkbox"
+					name="current_employment_status[]" value="">Prefer not to answer</input></label>
+			<label for="Other">
+				<input type="checkbox"
+					name="current_employment_status[]" value="other" onchange="showHide(this,'otherCurrentEmployment');">Other</input></label>
+		</div>
+
+<div id="otherCurrentEmployment" style="display: none;">
+		<div class="form-control">
+			<label for="other_current_employment">
+				How would you describe your current employment?
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="other_current_employment" id="other_current_employment"
+				placeholder="" name="other_current_employment">
+			</textarea>
+		</div>
+    </div>
+
+		<div class="form-control">
+			<label>
+				Have you experienced an extended period of unemployment in the past?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="extended_unemployment">
+				<input type="radio"
+					id="yes_extended_unemployment"
+					name="extended_unemployment" value="yes" onclick="unemployment(this);">Yes</input>
+			</label>
+			<label for="no_extended_unemployment">
+				<input type="radio"
+					id="extended_unemployment"
+					name="extended_unemployment" value="no" onclick="unemployment(this);">No</input>
+			</label>
+		</div>
+
+		<!-- SECOND FORM -->
+
+    <div id="unemployment" style="display:none;">
+		<div class="form-control">
+			<label for="length_of_unemployment">
+				How long was that period of time? (In weeks, months, or years)
+			</label>
+
+            <!-- multi-line text input control -->
+			<textarea name="length_of_unemployment" id="length_of_unemployment"
+				placeholder="" name="length_of_unemployment">
+			</textarea>
+		</div>
+    </div>
+		<!-- -->
+
+		<div class="form-control">
+			<label>
+				What is your annual household income from all sources?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="annual_household_income">
+				<input type="radio"
+					id="annual_household_income"
+					name="annual_household_income" value="less than $10,000">Less than $10,000</input>
+			</label>
+			<label for="annual_household_income">
+				<input type="radio"
+					id="annual_household_income"
+					name="annual_household_income" value="$10,000-$24,999">$10,000- $24,999</input>
+			</label>
+			<label for="annual_household_income">
+				<input type="radio"
+					id="annual_household_income"
+					name="annual_household_income" value="$25,000-$34,999">$25,000- $34,999</input>
+			</label>
+			<label for="annual_household_income">
+				<input type="radio"
+					id="annual_household_income"
+					name="annual_household_income" value="$35,000-$49,999">$35,000- $49,999</input>
+			</label>
+			<label for="annual_household_income">
+				<input type="radio"
+					id="annual_household_income"
+					name="annual_household_income" value="$50,000-$74,999">$50,000- $74,999</input>
+			</label>
+			<label for="annual_household_income">
+				<input type="radio"
+					id="annual_household_income"
+					name="annual_household_income" value="$75,000-$99,999">$75,000- $99,999</input>
+			</label>
+			<label for="annual_household_income">
+				<input type="radio"
+					id="annual_household_income"
+					name="annual_household_income" value="$100,000-$149,999">$100,000- $149,999</input>
+			</label>
+			<label for="annual_household_income">
+				<input type="radio"
+					id="annual_household_income"
+					name="annual_household_income" value="$150,000-$199,999">$150,000- $199,999</input>
+			</label>
+			<label for="annual_household_income">
+				<input type="radio"
+					id="annual_household_income"
+					name="annual_household_income" value="$200,000 or more">$200,000 or more</input>
+			</label>
+			<label for="annual_household_income">
+				<input type="radio"
+					id="annual_household_income"
+					name="annual_household_income" value="">Prefer not to answer</input>
+			</label>
+		</div>
+
+		<div class="form-control">
+			<label>
+				What is the highest grade or year of school you completed?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="education_level">
+				<input type="radio"
+					id="education_level"
+					name="education_level" value="never attended  or only kindergarten">Never attended school or only attended kindergarten</input>
+			</label>
+			<label for="education_level">
+				<input type="radio"
+					id="education_level"
+					name="education_level" value="grades 1 through 4">Grades 1 through 4 (Primary School)</input>
+			</label>
+			<label for="education_level">
+				<input type="radio"
+					id="education_level"
+					name="education_level" value="grades 5 through 8">Grades 5 through 8 (Middle School)</input>
+			</label>
+			<label for="education_level">
+				<input type="radio"
+					id="education_level"
+					name="education_level" value="grades 9 through 11">Grades 9 through 11 (Some High School)</input>
+			</label>
+			<label for="education_level">
+				<input type="radio"
+					id="education_level"
+					name="education_level" value="grade 12 or GED">Grade 12 or GED (High School graduate)</input>
+			</label>
+			<label for="education_level">
+				<input type="radio"
+					id="education_level"
+					name="education_level" value="1 to 3 years after high school">1 to 3 years after high school (Some college, Associate's Degree, or technical school)</input>
+			</label>
+			<label for="education_level">
+				<input type="radio"
+					id="education_level"
+					name="education_level" value="college 4 years or more">College 4 years or more (College Graduate)</input>
+			</label>
+			<label for="education_level">
+				<input type="radio"
+					id="education_level"
+					name="education_level" value="advanced degree">Advanced degree (Master's, Doctorate, etc.)</input>
+			</label>
+			<label for="education_level">
+				<input type="radio"
+					id="education_level"
+					name="education_level" value="">Prefer not to answer</input>
+			</label>
+		</div>
+
+		<div class="form-control">
+			<label>
+				Have you ever served on active duty in the United States Armed Forces, either in the regular military or in a National Guard or military reserve unit?
+				<small>Active duty does not include training for the Reserves or National Guard, but DOES include activation, for example, for the Persian Gulf War. </small>
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="active_duty">
+				<input type="radio"
+					id="active_duty"
+					name="active_duty" value="yes">Yes</input>
+			</label>
+			<label for="active_duty">
+				<input type="radio"
+					id="active_duty"
+					name="active_duty" value="no">No</input>
+			</label>
+			<label for="active_duty">
+				<input type="radio"
+					id="active_duty"
+					name="active_duty" value="">Prefer not to answer</input>
+			</label>
+		</div>
+
+		<div class="form-control">
+			<label>
+				What is your current marital status?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="marital_status">
+				<input type="radio"
+					id="marital_status"
+					name="marital_status" value="married">Married</input>
+			</label>
+			<label for="marital_status">
+				<input type="radio"
+					id="marital_status"
+					name="marital_status" value="divorced">Divorced</input>
+			</label>
+			<label for="marital_status">
+				<input type="radio"
+					id="marital_status"
+					name="marital_status" value="widowed">Widowed</input>
+			</label>
+			<label for="marital_status">
+				<input type="radio"
+					id="marital_status"
+					name="marital_status" value="separated">Separated</input>
+			</label>
+			<label for="marital_status">
+				<input type="radio"
+					id="marital_status"
+					name="marital_status" value="never married">Never married</input>
+			</label>
+			<label for="marital_status">
+				<input type="radio"
+					id="marital_status"
+					name="marital_status" value="living with partner">Living with partner</input>
+			</label>
+			<label for="marital_status">
+				<input type="radio"
+					id="marital_status"
+					name="marital_status" value="">Prefer not to answer</input>
+			</label>
+		</div>
+
+		<div class="form-control">
+			<label>
+				Are you covered by health insurance or some other kind of health care plan?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="health_insurance">
+				<input type="radio"
+					id="health_insurance"
+					name="health_insurance" value="yes">Yes</input>
+			</label>
+			<label for="health_insurance">
+				<input type="radio"
+					id="health_insurance"
+					name="health_insurance" value="no">No</input>
+			</label>
+			<label for="health_insurance">
+				<input type="radio"
+					id="health_insurance"
+					name="health_insurance" value="">Prefer not to answer</input>
+			</label>
+			<label for="health_insurance">
+				<input type="radio"
+					id="health_insurance"
+					name="health_insurance" value="do not know">Do not know</input>
+			</label>
+		</div>
+
+		<div class="form-control">
+			<label>Are you currently enrolled in any of the following types of health insurance or health coverage plans?
+				<small>Select all that apply.</small>
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Insurancepurchaseddirectly">
+				<input type="checkbox" name="types_of_insurance[]" value="insurance purchased directly from an insurance company">Insurance purchased directly from an insurance company (by you or another family member)</input></label>
+			<label for="Insurancethroughacurrentorformeremployerorunion">
+				<input type="checkbox"
+					name="types_of_insurance[]" value="insurance through a current or former employer or union">Insurance through a current or former employer or union (by you or another family member)</input></label>
+			<label for="Medicare">
+				<input type="checkbox"
+					name="types_of_insurance[]" value="medicare">Medicare, for people 65 and older or people with certain disabilities</input></label>
+			<label for="Medicaid">
+				<input type="checkbox"
+					name="types_of_insurance[]" value="medicaid">Medicaid, Medical Assistance, or any kind of government-assistance plan for those with low incomes or disability</input></label>
+			<label for="Tricare">
+				<input type="checkbox"
+					name="types_of_insurance[]" value="TRICARE or other military health care">TRICARE or other military health care</input></label>
+			<label for="Veteransaffairs">
+				<input type="checkbox"
+					name="types_of_insurance[]" value="veterans affairs">Veterans Affairs(VA) (including those who have ever used or enrolled for VA health care)</input></label>
+			<label for="Indianhealthservice">
+				<input type="checkbox"
+					name="types_of_insurance[]" value="indian health service">Indian Health Service</input></label>
+			<label for="Another">
+				<input type="checkbox"
+					name="types_of_insurance[]" value="any other type of health insurance or health coverage plan" onchange="showHide(this,'showOtherInsurance');">Any other type of health insurance or health coverage plan</input></label>
+
+		<!-- SECOND FORM -->
+    <div id="showOtherInsurance" style="display: none;">
+		<div class="form-control">
+			<label for="other_types_of_insurance">
+				Please specify
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="other_types_of_insurance" id="other_types_of_insurance"
+				placeholder="" name="other_types_of_insurance">
+			</textarea>
+		</div>
+    </div>
+		<!-- -->
+
+			<label for="Idonthavehealthinsurance">
+				<input type="checkbox"
+					name="types_of_insurance[]" value="i do not have health insurance, self-pay">I do not have health insurance, self-pay</input></label>
+			<label for="Prefernottoanswer">
+				<input type="checkbox"
+					name="types_of_insurance[]" value="">Prefer not to answer</input></label>
+		</div>
+
+
+
+		<div class="form-control">
+			<label>
+				Have you ever gone a significant period of time without insurance?
+				
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="ever_without_insurance">
+				<input type="radio" id="yes_ever_without_insurance" name="ever_without_insurance" value="yes" onclick="showHideNoIns(this);">Yes</input>
+			</label>
+			<label for="ever_without_insurance">
+				<input type="radio" id="ever_without_insurance" name="ever_without_insurance" value="no" onclick="showHideNoIns(this);">No</input>
+			</label>
+		</div>
+
+		<!-- SECOND FORM -->
+    <div id="timeNoIns" style="display: none;">
+		<div class="form-control">
+			<label for="time_without_insurance">
+				How long was the period of time you went without insurance?
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="time_without_insurance" id="time_without_insurance"
+				placeholder="" name="time_without_insurance">
+			</textarea>
+		</div>
+    </div>
+		<!-- -->
+
+		<div class="form-control">
+			<label>Which of the following services have you used in your lifetime?
+				
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Medicaid">
+				<input type="checkbox"
+					name="services_used[]" value="medicaid">Medicaid</input></label>
+			<label for="SNAP">
+				<input type="checkbox"
+					name="services_used[]" value="snap">SNAP</input></label>
+			<label for="TANF">
+				<input type="checkbox"
+					name="services_used[]" value="tanf">TANF</input></label>
+			<label for="WIC">
+				<input type="checkbox"
+					name="services_used[]" value="wic">WIC</input></label>
+			<label for="Noneoftheabove">
+				<input type="checkbox"
+					name="services_used[]" value="none of the above">None of the above</input></label>
+			<label for="Prefernottoanswer">
+				<input type="checkbox"
+					name="services_used[]" value="">Prefer not to answer</input></label>
+		</div>
+
+		<div class="form-control">
+			<label>Do you/have you or someone you care for have any of the following experiences with the legal system?
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Incarceration">
+				<input type="checkbox"
+					name="legal_system_experience[]" value="incarceration">Incarceration</input></label>
+			<label for="Been the victim of a crime in which the perpetrator faced legal consequences">
+				<input type="checkbox"
+					name="legal_system_experience[]" value="been the victim of a crime in which the perpetrator faced legal consequences">Been the victim of a crime in which the perpetrator faced legal consequences</input></label>
+			<label for="Been the victim of a crime in which the perpetrator did not face legal consequences">
+				<input type="checkbox"
+					name="legal_system_experience[]" value="been the victim of a crime in which the perpetrator did not face legal consequences">Been the victim of a crime in which the perpetrator did not face legal consequences</input></label>
+			<label for="Been arrested">
+				<input type="checkbox"
+					name="legal_system_experience[]" value="been arrested">Been arrested</input></label>
+			<label for="Other">
+				<input type="checkbox"
+					name="legal_system_experience[]" value="other" onchange="showHide(this,'otherLegal');">Other</input></label>
+		</div>
+
+		<!-- SECOND FORM -->
+    <div id="otherLegal" style="display:none;">
+		<div class="form-control">
+			<label for="other_legal_experience">
+				What other legal experience(s) do/have you or someone you care for experienced? (This can include anything that caused you to be subject to dealing with legal matters through work, crime, or other instance.)
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="other_legal_experience" id="other_legal_experience"
+				placeholder="" name="other_legal_experience">
+			</textarea>
+		</div>
+    </div>
+
+		<div class="form-control">
+			<label>
+				Are you a parent?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="parent">
+				<input type="radio" id="yes_parent" name="parent" value="yes" onclick="showHideParent(this);">Yes</input>
+			</label>
+			<label for="parent">
+				<input type="radio" id="no_parent" name="parent" value="no" onclick="showHideParent(this);">No</input>
+			</label>
+		</div>
+
+		<!-- SECOND FORM -->
+    <div id="parent" style="display:none;">
+		<div class="form-control">
+			<label>Please select all that describe you.
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Ihavebiologicalchildren">
+				<input type="checkbox"
+					name="parent_description[]" value="i have biological children">I have biological children</input></label>
+			<label for="Ihaveadoptedchildren">
+				<input type="checkbox"
+					name="parent_description[]" value="i have adopted children">I have adopted children</input></label>
+			<label for="Iamafosterparent">
+				<input type="checkbox"
+					name="parent_description[]" value="i am a foster parent">I am a foster parent</input></label>
+			<label for="Iamaguardian">
+				<input type="checkbox"
+					name="parent_description[]" value="i am a guardian">I am a guardian</input></label>
+			<label for="Other">
+				<input type="checkbox"
+					name="parent_description[]" value="other" onchange="showHide(this,'showOtherParent');">Other</input></label>
+
+<div id="showOtherParent" style="display: none;">
+		<div class="form-control">
+			<label for="other_parent">
+				Please specify
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="other_parent" id="other_parent"
+				placeholder="" name="other_parent">
+			</textarea>
+		</div>
+    </div>
+			<label for="Prefernottoanswer">
+				<input type="checkbox"
+					name="parent_description[]" value="">Prefer not to answer</input></label>
+		</div>
+    </div>
+		<!-- -->
+
+
+		<div class="form-control">
+			<label>
+				Were you in the foster care system at any point in your childhood?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="in_foster_care">
+				<input type="radio"
+					id="yes_in_foster_care"
+					name="in_foster_care" value="yes" onclick="fosterCare(this);">Yes</input>
+			</label>
+			<label for="in_foster_care">
+				<input type="radio"
+					id="no_in_foster_care"
+					name="in_foster_care" value="no"  onclick="fosterCare(this);">No</input>
+			</label>
+		</div>
+
+		<!-- SECOND FORM -->
+    <div id="fosterCare" style="display:none;">
+		<div class="form-control">
+			<label for="foster_care_experience">
+				If you are willing, can you provide us with some information about your time in foster care? (Ex: what ages you were in foster care?)
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="foster_care_experience" id="foster_care_experience"
+				placeholder="" name="foster_care_experience">
+			</textarea>
+		</div>
+    </div>
+
+		<!-- -->
+
+    <hr>
+    <h3>Below are a list of health conditions - please select any condition which you have experienced yourself curently or in the past<br>OR<br>Have been the caregiver for someone with the health condition either currently or in the past</h3><br><br>
+
+		<div class="form-control">
+			<label>Do you/have you have any experience with any of the following physical disabilities?
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Acquired Brain Injury">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="acquired brain injury" onchange="showHideSlider(this,'acqBrInj');">Acquired Brain Injury</input></label>
+<div id="acqBrInj" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="acqBrInj_slider" 
+	step="1" list="acqBrInj_slider_number" oninput="acqBrInj_slider_value.innerText = this.value">
+	<datalist id="acqBrInj_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="acqBrInj_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="ALS">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="ALS" onchange="showHideSlider(this,'als');">ALS (Lou Gehrig's Disease)</input></label>
+
+<div id="als" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label>
+	<input type="range" min="0" max="5" value="0" id="als_slider" 
+	step="1" list="als_slider_number" oninput="als_slider_value.innerText = this.value">
+	<datalist id="als_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="als_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Amputation">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="amputation" onchange="showHideSlider(this,'amputation');">Amputation</input></label>
+
+<div id="amputation" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="amputation_slider" 
+	step="1" list="amputation_slider_number" oninput="amputation_slider_value.innerText = this.value">
+	<datalist id="amputation_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="amputation_slider_value">0</label>
+	</div>
+</div>
+
+            <label for="Arthritis">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="arthritis" onchange="showHideSlider(this,'arthritis');">Arthritis</input></label>
+
+<div id="arthritis" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="arthritis_slider" 
+	step="1" list="arthritis_slider_number" oninput="arthritis_slider_value.innerText = this.value">
+	<datalist id="arthritis_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="arthritis_slider_value">0</label>
+	</div>
+</div>
+
+
+			<label for="Cerebral Palsy">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="cerebral palsy" onchange="showHideSlider(this,'cPalsy');">Cerebral Palsy</input></label>
+
+
+<div id="cPalsy" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="cPalsy_slider" 
+	step="1" list="cPalsy_slider_number" oninput="cPalsy_slider_value.innerText = this.value">
+	<datalist id="cPalsy_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="cPalsy_slider_value">0</label>
+	</div>
+</div>
+
+
+			<label for="Cystic Fibrosis">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="cystic fibrosis" onchange="showHideSlider(this,'cFibrosis');">Cystic Fibrosis (CF)</input></label>
+
+<div id="cFibrosis" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="cFibrosis_slider" 
+	step="1" list="cFibrosis_slider_number" oninput="cFibrosis_slider_value.innerText = this.value">
+	<datalist id="cFibrosis_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="cFibrosis_slider_value">0</label>
+	</div>
+</div>
+
+
+			<label for="Epilepsy">
+				<input type="checkbox" name="physical_diisabilities[]" value="epilepsy" onchange="showHideSlider(this,'epilepsy');">Epilepsy</input></label>
+
+<div id="epilepsy" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="epilepsy_slider" 
+	step="1" list="epilepsy_slider_number" oninput="epilepsy_slider_value.innerText = this.value">
+	<datalist id="epilepsy_slider_numer">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="epilepsy_slider_value">0</label>
+	</div>
+</div>
+
+
+			<label for="Hearing Impairment">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="hearing impairment" onchange="showHideSlider(this,'hearing_impairment');">Hearing Impairment</input></label>
+
+<div id="hearing_impairment" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you?
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="hearing_impairment_slider" 
+	step="1" list="hearing_impairment_slider_number" oninput="hearing_impairment_slider_value.innerText = this.value">
+	<datalist id="hearing_impairment_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="hearing_impairment_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Muscular Dystrophy">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="muscular_dystrophy" onchange="showHideSlider(this,'muscular_dystrophy');">Muscular Dystrophy</input></label>
+
+<div id="muscular_dystrophy" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="muscular_dystrophy_slider" 
+	step="1" list="muscular_dystrophy_slider_number" oninput="muscular_dystrophy_slider_value.innerText = this.value">
+	<datalist id="muscular_dystrophy_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="muscular_dystrophy_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Musculoskeletal Disease">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="musculoskeletal_disease" onchange="showHideSlider(this,'musculoskeletal_disease');">Musculoskeletal Disease</input></label>
+
+<div id="musculoskeletal_disease" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="musculoskeletal_disease_slider" 
+	step="1" list="musculoskeletal_disease_slider_number" oninput="musculoskeletal_disease_slider_value.innerText = this.value">
+	<datalist id="musculoskeletal_disease_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="musculoskeletal_disease_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Multiple Sclerosis">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="multiple_sclerosis" onchange="showHideSlider(this,'multiple_sclerosis');">Multiple Sclerosis (MS)</input></label>
+
+<div id="multiple_sclerosis" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="multiple_sclerosis_slider" 
+	step="1" list="multiple_sclerosis_slider_number" oninput="multiple_sclerosis_slider_value.innerText = this.value">
+	<datalist id="multiple_sclerosis_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="multiple_sclerosis_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Physical Difference that distracts or impacts life">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="physical_difference" onchange="showHideSlider(this,'physical_difference');">Physical difference that distracts or impacts life (ex: scarring, major skin condition, etc.)</input></label>
+
+<div id="physical_difference" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="physical_difference_slider" 
+	step="1" list="physical_difference_slider_number" oninput="physical_difference_slider_value.innerText = this.value">
+	<datalist id="physical_difference_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="physical_difference_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Osteoporosis">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="osteoporosis" onchange="showHideSlider(this,'osteoporosis');">Osteoporosis</input></label>
+
+<div id="osteoporosis" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="osteoporosis_slider" 
+	step="1" list="osteoporosis_slider_number" oninput="osteoporosis_slider_value.innerText = this.value">
+	<datalist id="osteoporosis_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="osteoporosis_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Tourette Syndrome">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="tourette_syndrome" onchange="showHideSlider(this,'tourette_syndrome');">Tourette Syndrome</input></label>
+
+<div id="tourette_syndrome" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="tourette_syndrome_slider" 
+	step="1" list="tourette_syndrome_slider_number" oninput="tourette_syndrome_slider_value.innerText = this.value">
+	<datalist id="tourette_syndrome_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="tourette_syndrome_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Spina Bifida">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="spina_bifida" onchange="showHideSlider(this,'spina_bifida');">Spina Bifida</input></label>
+
+<div id="spina_bifida" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="spina_bifida_slider" 
+	step="1" list="spina_bifida_slider_number" oninput="spina_bifida_slider_value.innerText = this.value">
+	<datalist id="spina_bifida_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="spina_bifida_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Spinal Cord Injury">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="spinal_cord_injury" onchange="showHideSlider(this,'spinal_cord_injury');">Spinal Cord Injury</input></label>
+
+<div id="spinal_cord_injury" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="spinal_cord_injury_slider" 
+	step="1" list="spinal_cord_injury_slider_number" oninput="spinal_cord_injury_slider_value.innerText = this.value">
+	<datalist id="spinal_cord_injury_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="spinal_cord_injury_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Visual Impairment">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="visual_impairment" onchange="showHideSlider(this,'visual_impairment');">Visual Impairment</input></label>
+
+<div id="visual_impairment" style="display: none;">
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="visual_impairment_slider" 
+	step="1" list="visual_impairment_slider_number" oninput="visual_impairment_slider_value.innerText = this.value">
+	<datalist id="visual_impairment_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="visual_impairment_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Other Physical Disability">
+				<input type="checkbox"
+					name="physical_diisabilities[]" value="other physical disability" onchange="showHide(this,'physicalDis');">Other Physical Disability</input></label>
+		</div>
+
+		<!-- SECOND FORM -->
+    <div id="physicalDis" style="display: none;">
+		<div class="form-control">
+			<label for="other_physical_diisabilities">
+				What other physical disabilities have you or someone you have cared for experienced?
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="other_physical_diisabilities" id="other_physical_diisabilities"
+				placeholder="" name="other_physical_diisabilities">
+			</textarea>
+		</div>
+        
+<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="physicalDisability_slider" 
+	step="1" list="physicalDisability_slider_number" oninput="physicalDisability_slider_value.innerText = this.value">
+	<datalist id="physicalDisability_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="physicalDisability_slider_value">0</label>
+	</div>
+</div>
+
+
+    </div>
+
+
+		<div class="form-control">
+			<label>Do you have any experience with any of the following cancer diagnoses?
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Bladder">
+				<input type="checkbox"
+					name="cancer[]" value="bladder cancer" onchange="showHideSlider(this,'bladder');">Bladder</input></label>
+
+<div id="bladder" style="display: none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="bladder_slider" 
+	step="1" list="bladder_slider_number" oninput="bladder_slider_value.innerText = this.value">
+	<datalist id="bladder_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="bladder_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Breast">
+				<input type="checkbox"
+					name="cancer[]" value="breast cancer" onchange="showHideSlider(this,'breast');">Breast</input></label>
+
+<div id="breast" style="display: none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="breast_slider" 
+	step="1" list="breast_slider_number" oninput="breast_slider_value.innerText = this.value">
+	<datalist id="breast_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="breast_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Colon and Rectal">
+				<input type="checkbox"
+					name="cancer[]" value="colon and rectal cancer" onchange="showHideSlider(this,'colon_and_rectal');">Colon and Rectal</input></label>
+
+<div id="colon_and_rectal" style="display: none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="colon_and_rectal_slider" 
+	step="1" list="colon_and_rectal_slider_number" oninput="colon_and_rectal_slider_value.innerText = this.value">
+	<datalist id="colon_and_rectal_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="colon_and_rectal_slider_value">0</label>
+	</div>
+</div>
+
+            <label for="Endometrial">
+				<input type="checkbox"
+					name="cancer[]" value="endometrial cancer" onchange="showHideSlider(this'endometrial');">Endometrial</input></label>
+
+<div id="endometrial" style="display: none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="endometrial_slider" 
+	step="1" list="endometrial_slider_number" oninput="endometrial_slider_value.innerText = this.value">
+	<datalist id="endometrial_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="endometrial_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Kidney">
+				<input type="checkbox"
+					name="cancer[]" value="kidney cancer" onchange="showHideSlider(this,'kidney');">Kidney</input></label>
+
+<div id="kidney" style="display: none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="kidney_slider" 
+	step="1" list="kidney_slider_number" oninput="kidney_slider_value.innerText = this.value">
+	<datalist id="kidney_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="kidney_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Leukemia">
+				<input type="checkbox"
+					name="cancer[]" value="leukemia cancer" onchange="showHideSlider(this,'leukemia');">Leukemia</input></label>
+
+<div id="leukemia" style="display: none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="leukemia_slider" 
+	step="1" list="leukemia_slider_number" oninput="leukemia_slider_value.innerText = this.value">
+	<datalist id="leukemia_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="leukemia_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Liver">
+				<input type="checkbox"
+					name="cancer[]" value="liver cancer" onchange="showHideSlider(this,'liver');">Liver</input></label>
+
+<div id="liver" style="display: none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="liver_slider" 
+	step="1" list="liver_slider_number" oninput="liver_slider_value.innerText = this.value">
+	<datalist id="liver_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="liver_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Lung">
+				<input type="checkbox"
+					name="cancer[]" value="lung cancer" onchange="showHideSlider(this,'lung');">Lung</input></label>
+
+<div id="lung" style="display: none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="lung_slider" 
+	step="1" list="lung_slider_number" oninput="lung_slider_value.innerText = this.value">
+	<datalist id="lung_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="lung_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Skin">
+				<input type="checkbox"
+					name="cancer[]" value="skin cancer" onchange="showHideSlider(this,'skin');">Skin</input></label>
+
+<div id="skin" style="display: none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="skin_slider" 
+	step="1" list="skin_slider_number" oninput="skin_slider_value.innerText = this.value">
+	<datalist id="skin_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="skin_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Non-Hodgkins Lymphoma">
+				<input type="checkbox"
+					name="cancer[]" value="non-hodgkins lymphoma" onchange="showHideSlider(this,'non_hodgkins_lymphoma');">Non-Hodgkins Lymphoma</input></label>
+
+<div id="non_hodgkins_lymphoma" style="display: none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="non_hodgkins_lymphoma_slider" 
+	step="1" list="non_hodgkins_lymphoma_slider_number" oninput="non_hodgkins_lymphoma_slider_value.innerText = this.value">
+	<datalist id="non_hodgkins_lymphoma_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="non_hodgkins_lymphoma_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Pancreatic">
+				<input type="checkbox"
+					name="cancer[]" value="pancreatic cancer" onchange="showHideSlider(this,'pancreatic');">Pancreatic</input></label>
+
+<div id="pancreatic" style="display: none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="pancreatic_slider" 
+	step="1" list="pancreatic_slider_number" oninput="pancreatic_slider_value.innerText = this.value">
+	<datalist id="pancreatic_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="pancreatic_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Prostate">
+				<input type="checkbox"
+					name="cancer[]" value="prostate cancer" onchange="showHideSlider(this,'prostate');">Prostate</input></label>
+
+<div id="prostate" style="display: none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="prostate_slider" 
+	step="1" list="prostate_slider_number" oninput="prostate_slider_value.innerText = this.value">
+	<datalist id="prostate_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="prostate_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Thyroid">
+				<input type="checkbox"
+					name="cancer[]" value="thyroid cancer" onchange="showHideSlider(this,'thyroid');">Thyroid</input></label>
+
+<div id="thyroid" style="display: none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="thyroid_slider_number" 
+	step="1" list="thyroid_slider_number" oninput="thyroid_slider_value.innerText = this.value">
+	<datalist id="thyroid_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="thyroid_slider_value">0</label>
+	</div>
+</div>
+
+			<label for="Other">
+				<input type="checkbox"
+					name="cancer[]" value="cancer" onchange="showHide(this,'cancerOther');">Other</input></label>
+		</div>
+
+		<!-- SECOND FORM -->
+    <div id="cancerOther" style="display:none;">
+		<div class="form-control">
+			<label for="other_cancer">
+				What other cancer have you or someone you have cared for experienced?
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="other_cancer" id="other_cancer"
+				placeholder="" name="other_cancer">
+			</textarea>
+		</div>
+
+
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="cancerOther_slider" 
+	step="1" list="cancerOther_slider_number" oninput="cancerOther_slider_value.innerText = this.value">
+	<datalist id="cancerOther_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="cancerOther_slider_value">0</label>
+	</div>
+    </div>
+
+
+		<!--  -->
+
+
+		<div class="form-control">
+			<label>Do you have any experience with any of the following heart conditions?
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Congenital Heart Disease">
+				<input type="checkbox"
+					name="heart_conditions[]" value="congenital heart disease" onchange="showHideSlider(this,'congenital_heart_disease');">Congenital Heart Disease</input></label>
+
+	<div id="congenital_heart_disease" style="display:none;">
+    <div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="congenital_heart_disease_slider" 
+	step="1" list="congenital_heart_disease_slider_number" oninput="congenital_heart_disease_slider_value.innerText = this.value">
+	<datalist id="congenital_heart_disease_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="congenital_heart_disease_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Coronary Artery Disease">
+				<input type="checkbox"
+					name="heart_conditions[]" value="coronary artery disease" onchange="showHideSlider(this,'coronary_artery_disease');">Coronary Artery Disease</input></label>
+
+	<div id="coronary artery disease" style="display:none;">
+    <div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="coronary_artery_disease_slider" 
+	step="1" list="coronary_artery_disease_slider_number" oninput="coronary_artery_disease_slider_value.innerText = this.value">
+	<datalist id="coronary_artery_disease_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="coronary_artery_disease_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Heart Arrhythmia">
+				<input type="checkbox"
+					name="heart_conditions[]" value="heart arrhythmia" onchange="showHideSlider(this,'heart_arrhythmia');">Heart Arrhythmia</input></label>
+
+	<div id="heart_arrhythmia" style="display:none;">
+    <div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="heart_arrhythmia_slider" 
+	step="1" list="heart_arrhythmia_number" oninput="heart_arrhythmia_value.innerText = this.value">
+	<datalist id="heart_arrhythmia_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="heart_arrhythmia_value">0</label>
+	</div>
+    </div>
+
+			<label for="Dilated Cardiomyopathy">
+				<input type="checkbox"
+					name="heart_conditions[]" value="dilated cardiomyopathy" onchange="showHideSlider(this,'dilated_cardiomyopathy');">Dilated Cardiomyopathy</input></label>
+
+	<div id="dilated_cardiomyopathy" style="display:none;">
+    <div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="dilated_cardiomyopathy_slider" 
+	step="1" list="dilated_cardiomyopathy_slider_number" oninput="dilated_cardiomyopathy_slider_value.innerText = this.value">
+	<datalist id="dilated_cardiomyopathy_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="dilated_cardiomyopathy_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Pulmonary Stenosis">
+				<input type="checkbox"
+					name="heart_conditions[]" value="pulmonary stenosis" onchange="showHideSlider(this,'pulmonary_stenosis');">Pulmonary Stenosis</input></label>
+
+	<div id="pulmonary_stenosis" style="display:none;">
+    <div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="pulmonary_stenosis_slider" 
+	step="1" list="pulmonary_stenosis_slider_number" oninput="pulmonary_stenosis_slider_value.innerText = this.value">
+	<datalist id="pulmonary_stenosis_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="pulmonary_stenosis_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Heart Valve Disease">
+				<input type="checkbox"
+					name="heart_conditions[]" value="heart valve disease" onchange="showHideSlider(this,'heart_valve_disease');">Heart Valve Disease</input></label>
+
+	<div id="heart_valve_disease" style="display:none;">
+    <div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="heart_valve_disease_slider" 
+	step="1" list="heart_valve_disease_slider_number" oninput="heart_valve_disease_slider_value.innerText = this.value">
+	<datalist id="heart_valve_disease_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="heart_valve_disease_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Mitral Valve Prolapse">
+				<input type="checkbox"
+					name="heart_conditions[]" value="mitral valve prolapse" onchange="showHideSlider(this,'mitral_valve_prolapse');">Mitral Valve Prolapse</input></label>
+
+	<div id="mitral_valve_prolapse" style="display:none;">
+    <div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="mitral_valve_prolapse_slider" 
+	step="1" list="mitral_valve_prolapse_slider_number" oninput="mitral_valve_prolapse_slider_value.innerText = this.value">
+	<datalist id="mitral_valve_prolapse_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="mitral_valve_prolapse_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Hypertension">
+				<input type="checkbox"
+					name="heart_conditions[]" value="hypertension" onchange="showHideSlider(this,'hypertension');">Hypertension (High Blood Pressure)</input></label>
+
+	<div id="hypertension" style="display:none;">
+    <div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="hypertension_slider" 
+	step="1" list="hypertension_slider_number" oninput="hypertension_slider_value.innerText = this.value">
+	<datalist id="hypertension_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="hypertension_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Pericarditis">
+				<input type="checkbox"
+					name="heart_conditions[]" value="pericarditis" onchange="showHideSlider(this,'pericarditis');">Pericarditis</input></label>
+
+	<div id="pericarditis" style="display:none;">
+    <div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="pericarditis_slider_number" 
+	step="1" list="pericarditis_slider_number" oninput="pericarditis_slider_value.innerText = this.value">
+	<datalist id="pericarditis_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="pericarditis_slider_value">0</label>
+	</div>
+    </div>
+        <label for="Other Heart Condition">
+				<input type="checkbox"
+					name="heart_conditions[]" value="other heart condition" onchange="showHide(this,'otherHeart');">Other Heart Condition</input></label>
+		</div>
+
+    <div id="otherHeart" style="display:none;">
+		<div class="form-control">
+			<label for="other_heart_conditions">
+				What other heart condition(s) have you or someone you have cared for experienced?
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="other_heart_conditions" id="other_heart_conditions"
+				placeholder="" name="other_heart_conditions">
+			</textarea>
+		</div>
+
+	
+	
+    <div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="otherHeart_slider" 
+	step="1" list="otherHeart_slider_number" oninput="otherHeart_slider_value.innerText = this.value">
+	<datalist id="otherHeart_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="otherHeart_slider_value">0</label>
+	</div>
+    </div>
+
+
+
+		<div class="form-control">
+			<label>Do you have any experience with any of the following surgeries?
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="ACL Reconstruction Surgery">
+				<input type="checkbox"
+					name="surgeries[]" value="acl reconstruction surgery" onchange="showHideSlider(this,'acl_reconstruction_surgery');">ACL Reconstruction Surgery</input></label>
+
+    <div id="acl_reconstruction_surgery" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="acl_reconstruction_surgery_slider" 
+	step="1" list="acl_reconstruction_surgery_slider_number" oninput="acl_reconstruction_surgery_slider_value.innerText = this.value">
+	<datalist id="acl_reconstruction_surgery_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="acl_reconstruction_surgery_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Ankle Repair">
+				<input type="checkbox"
+					name="surgeries[]" value="ankle repair" onchange="showHideSlider(this,'ankle_repair');">Ankle Repair</input></label>
+
+    <div id="ankle_repair" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="ankle_repair_slider_number" 
+	step="1" list="ankle_repair_slider_number" oninput="ankle_repair_slider_value.innerText = this.value">
+	<datalist id="ankle_repair_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="ankle_repair_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Knee Replacement Surgery">
+				<input type="checkbox"
+					name="surgeries[]" value="knee replacement surgery" onchange="showHideSlider(this,'knee_replacement_surgery');">Knee Replacement Surgery</input></label>
+
+    <div id="knee_replacement_surgery" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="knee_replacement_surgery_slider" 
+	step="1" list="knee_replacement_surgery_slider_number" oninput="knee_replacement_surgery_slider_value.innerText = this.value">
+	<datalist id="knee_replacement_surgery_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="knee_replacement_surgery_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Shoulder Replacement Surgery">
+				<input type="checkbox"
+					name="surgeries[]" value="shoulder replacement surgery" onchange="showHideSlider(this,'shoulder_replacement_surgery');">Shoulder Replacement Surgery</input></label>
+
+    <div id="shoulder_replacement_surgery" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="shoulder_replacement_surgery_slider" 
+	step="1" list="shoulder_replacement_surgery_slider_number" oninput="shoulder_replacement_surgery_slider_value.innerText = this.value">
+	<datalist id="shoulder_replacement_surgery_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="shoulder_replacement_surgery_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Hip Replacement Surgery">
+				<input type="checkbox"
+					name="surgeries[]" value="hip replacement surgery" onchange="showHideSlider(this,'hip_replacement_surgery');">Hip Replacement Surgery</input></label>
+
+    <div id="hip_replacement_surgery" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="hip_replacement_surgery_slider" 
+	step="1" list="hip_replacement_surgery_slider_number" oninput="hip_replacement_surgery_slider_value.innerText = this.value">
+	<datalist id="hip_replacement_surgery_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="hip_replacement_surgery_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Knee Arthroscopy">
+				<input type="checkbox"
+					name="surgeries[]" value="knee arthroscopy" onchange="showHideSlider(this,'knee_arthroscopy');">Knee Arthroscopy</input></label>
+
+    <div id="knee_arthroscopy" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="knee_arthroscopy_slider" 
+	step="1" list="knee_arthroscopy_slider_number" oninput="knee_arthroscopy_slider_value.innerText = this.value">
+	<datalist id="knee_arthroscopy_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="knee_arthroscopy_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Shoulder Arthroscopy">
+				<input type="checkbox"
+					name="surgeries[]" value="shoulder arthroscopy" onchange="showHideSlider(this,'shoulder_arthroscopy');">Shoulder Arthroscopy</input></label>
+
+    <div id="shoulder_arthroscopy" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="shoulder_arthroscopy_slider" 
+	step="1" list="shoulder_arthroscopy_slider_number" oninput="shoulder_arthroscopy_slider_value.innerText = this.value">
+	<datalist id="shoulder_arthroscopy_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="shoulder_arthroscopy_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Spinal Surgeries">
+				<input type="checkbox"
+					name="surgeries[]" value="spinal surgeries" onchange="showHideSlider(this,'spinal_surgeries');">Spinal Surgeries</input></label>
+
+    <div id="spinal_surgeries" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="spinal_surgeries_slider" 
+	step="1" list="spinal_surgeries_slider_number" oninput="spinal_surgeries_slider_value.innerText = this.value">
+	<datalist id="spinal_surgeries_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="spinal_surgeries_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Other Surgeries">
+				<input type="checkbox"
+					name="surgeries[]" value="other_surgeries" onchange="showHide(this,'otherSurgeries');">Other Surgeries</input></label>
+		</div>
+
+    <div id="otherSurgeries" style="display:none;">
+		<div class="form-control">
+			<label for="other_surgeries">
+				What other surgery/surgeries have you or someone you have cared for experienced?
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="other_surgeries" id="other_surgeries"
+				placeholder="" name="other_surgeries">
+			</textarea>
+		</div>
+
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="surgeries_slider" 
+	step="1" list="surgeries_slider_number" oninput="surgeries_slider_value.innerText = this.value">
+	<datalist id="surgeries_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="surgeries_slider_value">0</label>
+	</div>
+    </div>
+
+
+		<div class="form-control">
+			<label>Do you have any experience with any of the following other chronic conditions?
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Alzheimer's disease and other Dementias">
+				<input type="checkbox"
+					name="chronic_conditions[]" value="alzheimers disease and other dementias" onchange="showHideSlider(this,'alzheimer');">Alzheimer's disease and other Dementias</input></label>
+
+    <div id="alzheimer" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="alzheimer_slider" 
+	step="1" list="alzheimer_slider_number" oninput="alzheimer_slider_value.innerText = this.value">
+	<datalist id="alzheimer_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="alzheimer_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Asthma">
+				<input type="checkbox"
+					name="chronic_conditions[]" value="asthma" onchange="showHideSlider(this,'asthma');">Asthma</input></label>
+
+    <div id="asthma" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="asthma_slider" 
+	step="1" list="asthma_slider_number" oninput="asthma_slider_value.innerText = this.value">
+	<datalist id="asthma_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="asthma_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Chronic Obstructive Pulmonary Disease">
+				<input type="checkbox"
+					name="chronic_conditions[]" value="chronic obstructive pulmonary disease" onchange="showHideSlider(this,'copd');">Chronic Obstructive Pulmonary Disease (COPD)</input></label>
+
+    <div id="copd" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="copd_slider" 
+	step="1" list="copd_slider_number" oninput="copd_slider_value.innerText = this.value">
+	<datalist id="copd_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="copd_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Crohn's Disease">
+				<input type="checkbox"
+					name="chronic_conditions[]" value="crohns disease" onchange="showHideSlider(this,'crohns');">Crohn's Disease</input></label>
+
+    <div id="crohns" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="crohns_slider" 
+	step="1" list="crohns_slider_number" oninput="crohns_slider_value.innerText = this.value">
+	<datalist id="crohns_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="crohns_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Ulcerative Colitis">
+				<input type="checkbox"
+					name="chronic_conditions[]" value="ulcerative colitis" onchange="showHideSlider(this,'ulcerative_colitis');">Ulcerative Colitis</input></label>
+	
+    <div id="ulcerative_colitis" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="ulcerative_colitis_slider" 
+	step="1" list="ulcerative_colitis_slider_number" oninput="ulcerative_colitis_slider_value.innerText = this.value">
+	<datalist id="ulcerative_colitis_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="ulcerative_colitis_slider_value">0</label>
+	</div>
+    </div>
+
+		<label for="Other Inflammatory Bowel Diseases">
+				<input type="checkbox"
+					name="chronic_conditions[]" value="other inflammatory bowel diseases" onchange="showHideSlider(this,'inflamBowel');">Other Inflammatory Bowel Diseases</input></label>
+
+    <div id="inflamBowel" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="inflamBowel_slider" 
+	step="1" list="inflamBowel_slider_number" oninput="inflamBowel_slider_value.innerText = this.value">
+	<datalist id="inflamBowel_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="inflamBowel_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Irritable Bowel Syndrome">
+				<input type="checkbox"
+					name="chronic_conditions[]" value="irritable bowel syndrome" onchange="showHideSlider(this,'irritable_bowel_syndrome');">Irritable Bowel Syndrome</input></label>
+
+    <div id="irritable_bowel_syndrome" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="irritable_bowel_syndrome_slider" 
+	step="1" list="irritable_bowel_syndrome_slider_number" oninput="irritable_bowel_syndrome_slider_value.innerText = this.value">
+	<datalist id="irritable_bowel_syndrome_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="irritable_bowel_syndrome_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Diabetes">
+				<input type="checkbox"
+					name="chronic_conditions[]" value="diabetes" onchange="showHideSlider(this,'diabetes');">Diabetes</input></label>
+
+    <div id="diabetes" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="diabetes_slider" 
+	step="1" list="diabetes_slider_number" oninput="diabetes_slider_value.innerText = this.value">
+	<datalist id="diabetes_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="diabetes_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Eating Disorders">
+				<input type="checkbox"
+					name="chronic_conditions[]" value="eating disorders" onchange="showHideSlider(this,'eating disorders');">Eating Disorders</input></label>
+	
+    <div id="eating_disorders" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="eating_disorders_slider" 
+	step="1" list="eating_disorders_slider_number" oninput="eating_disorders_slider_value.innerText = this.value">
+	<datalist id="eating_disorders_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="eating_disorders_slider_value">0</label>
+	</div>
+    </div>
+
+		<label for="Oral Health">
+				<input type="checkbox"
+					name="chronic_conditions[]" value="oral health" onchange="showHideSlider(this,'oral_health');">Oral Health</input></label>
+	
+    <div id="oral_health" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="oral_health_slider" 
+	step="1" list="oral_health_slider_number" oninput="oral_health_slider_value.innerText = this.value">
+	<datalist id="oral_health_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="oral_health_slider_value">0</label>
+	</div>
+    </div>
+
+		<label for="Other chronic condition(s) not listed">
+				<input type="checkbox"
+					name="chronic_conditions[]" value="other chronic condition not listed" onchange="showHide(this,'otherChronic');">Other chronic condition(s) not listed</input></label>
+		</div>
+
+    <div id="otherChronic" style="display:none;">
+		<div class="form-control">
+			<label for="other_chronic_conditions">
+				What other chronic condition(s) do/have you or someone you care for experienced?
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="other_chronic_conditions" id="other_chronic_conditions"
+				placeholder="" name="other_chronic_conditions">
+			</textarea>
+		</div>
+
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="otherChronic_slider" 
+	step="1" list="otherChronic_slider_number" oninput="otherChronic_slider_value.innerText = this.value">
+	<datalist id="otherChronic_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="otherChronic_slider_value">0</label>
+	</div>
+	</div>	
+
+
+		<div class="form-control">
+			<label>Do youhave any experience with any of the following mental health conditions?
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Bipolar Disorder">
+				<input type="checkbox"
+					name="mental_health_conditions[]" value="bipolar disorder" onchange="showHideSlider(this,'bipolar_disorder');">Bipolar Disorder</input></label>
+
+    <div id="bipolar_disorder" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="bipolar_disorder_slider" 
+	step="1" list="bipolar_disorder_slider_number" oninput="bipolar_disorder_slider_value.innerText = this.value">
+	<datalist id="bipolar_disorder_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="bipolar_disorder_slider_value">0</label>
+	</div>
+    </div>
+
+
+
+            <label for="Depression">
+				<input type="checkbox"
+					name="mental_health_conditions[]" value="depression" onchange="showHideSlider(this,'depression');">Depression</input></label>
+
+    <div id="depression" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="depression_slider" 
+	step="1" list="depression_slider_number" oninput="depression_slider_value.innerText = this.value">
+	<datalist id="depression_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="depression_slider_value">0</label>
+	</div>
+    </div>
+			<label for="Generalized Anxiety Disorder">
+				<input type="checkbox"
+					name="mental_health_conditions[]" value="generalized anxiety disorder" onchange="showHideSlider(this,'generalized_anxiety_disorder');">Generalized Anxiety Disorder</input></label>
+	
+    <div id="generalized_anxiety_disorder" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="generalized_anxiety_disorder_slider" 
+	step="1" list="generalized_anxiety_disorder_slider_number" oninput="generalized_anxiety_disorder_slider_value.innerText = this.value">
+	<datalist id="generalized_anxiety_disorder_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="generalized_anxiety_disorder_slider_value">0</label>
+	</div>
+    </div>
+		<label for="Obsessive-Compulsive Disorder">
+				<input type="checkbox"
+					name="mental_health_conditions[]" value="obsessive compulsive disorder" onchange="showHideSlider(this,'obsessive_compulsive_disorder');">Obsessive-Compulsive Disorder</input></label>
+
+    <div id="obsessive_compulsive_disorder" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="obsessive_compulsive_disorder_slider" 
+	step="1" list="obsessive_compulsive_disorder_slider_number" oninput="obsessive_compulsive_disorder_slider_value.innerText = this.value">
+	<datalist id="obsessive_compulsive_disorder_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="obsessive_compulsive_disorder_slider_value">0</label>
+	</div>
+    </div>
+			<label for="Post-traumatic Stress Disorder">
+				<input type="checkbox"
+					name="mental_health_conditions[]" value="posttraumatic stress disorder" onchange="showHideSlider(this,'posttraumatic_stress_disorder');">Post-traumatic Stress Disorder (PTSD)</input></label>
+
+    <div id="posttraumatic_stress_disorder" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="posttraumatic_stress_disorder_slider" 
+	step="1" list="posttraumatic_stress_disorder_slider_number" oninput="posttraumatic_stress_disorder_slider_value.innerText = this.value">
+	<datalist id="posttraumatic_stress_disorder_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="posttraumatic_stress_disorder_slider_value">0</label>
+	</div>
+    </div>
+			<label for="Schizophrenia">
+				<input type="checkbox"
+					name="mental_health_conditions[]" value="schizophrenia" onchange="showHideSlider(this,'schizophrenia');">Schizophrenia</input></label>
+
+    <div id="schizophrenia" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="schizophrenia_slider" 
+	step="1" list="schizophrenia_slider_number" oninput="schizophrenia_slider_value.innerText = this.value">
+	<datalist id="schizophrenia_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="schizophrenia_slider_value">0</label>
+	</div>
+    </div>
+			<label for="Social Anxiety Disorder">
+				<input type="checkbox"
+					name="mental_health_conditions[]" value="social anxiety disorder" onchange="showHideSlider(this,'social_anxiety_disorder');">Social Anxiety Disorder</input></label>
+
+    <div id="social_anxiety_disorder" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="social_anxiety_disorder_slider" 
+	step="1" list="social_anxiety_disorder_number" oninput="social_anxiety_disorder_value.innerText = this.value">
+	<datalist id="social_anxiety_disorder_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="social_anxiety_disorder_value">0</label>
+	</div>
+    </div>
+			<label for="Other mental health condition not listed">
+				<input type="checkbox"
+					name="mental_health_conditions[]" value="other mental health condition not listed" onchange="showHide(this,'otherMental');">Other mental health condition not listed</input></label>
+		</div>
+
+		<!-- SECOND FORM -->
+    <div id="otherMental" style="display: none;">
+		<div class="form-control">
+			<label for="other_mental_health_conditions">
+				What other mental health condition(s) do/have you or someone you care for experienced?
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="other_mental_health_conditions" id="other_mental_health_conditions"
+				placeholder="" name="other_mental_health_conditions">
+			</textarea>
+		</div>
+
+		<!-- -->
+
+<!-- SECOND FORM WOULD HAVE THIS SLIDER CODE FOR EACH SELECTED CHECKBOX -->
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="otherMental_slider" 
+	step="1" list="otherMental_slider_number" oninput="otherMental_slider_value.innerText = this.value">
+	<datalist id="otherMental_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="otherMental_slider_value">0</label>
+	</div>
+    </div>
+
+
+		<div class="form-control">
+			<label>Do you have any experience with any of the following educational special needs?
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Auditory Processing Disorder">
+				<input type="checkbox"
+					name="educational_special_needs[]" value="auditory processing disorder" onchange="showHideSlider(this,'auditory_processing_disorder');">Auditory Processing Disorder</input></label>
+
+    <div id="auditory_processing_disorder" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="auditory_processing_disorder_slider" 
+	step="1" list="auditory_processing_disorder_slider_number" oninput="auditory_processing_disorder_slider_value.innerText = this.value">
+	<datalist id="auditory_processing_disorder_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="auditory_processing_disorder_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Asperger's">
+				<input type="checkbox"
+					name="educational_special_needs[]" value="aspergers" onchange="showHideSlider(this,'aspergers');">Asperger's</input></label>
+
+    <div id="aspergers" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="aspergers_slider" 
+	step="1" list="aspergers_slider_number" oninput="aspergers_slider_value.innerText = this.value">
+	<datalist id="aspergers_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="aspergers_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Attention Deficit Hyperactivity Disorder">
+				<input type="checkbox"
+					name="educational_special_needs[]" value="attention deficit hyperactivity disorder" onchange="showHideSlider(this,'attention_deficit');">Attention Deficit Hyperactivity Disorder</input></label>
+
+    <div id="attention_deficit" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="attention_deficit_slider" 
+	step="1" list="attention_deficit_slider_number" oninput="attention_deficit_slider_value.innerText = this.value">
+	<datalist id="attention_deficit_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="attention_deficit_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Autism">
+				<input type="checkbox"
+					name="educational_special_needs[]" value="autism" onchange="showHideSlider(this,'autism');">Autism</input></label>
+
+    <div id="autism" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="autism_slider" 
+	step="1" list="autism_slider_number" oninput="autism_slider_value.innerText = this.value">
+	<datalist id="autism_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="autism_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Developmental Delays">
+				<input type="checkbox"
+					name="educational_special_needs[]" value="developmental delays" onchange="showHideSlider(this,'developmental_delays');">Developmental Delays</input></label>
+
+    <div id="developmental_delays" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="developmental_delays_slider" 
+	step="1" list="developmental_delays_slider_number" oninput="developmental_delays_slider_value.innerText = this.value">
+	<datalist id="developmental_delays_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="developmental_delays_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Down Syndrome">
+				<input type="checkbox"
+					name="educational_special_needs[]" value="down syndrome" onchange="showHideSlider(this,'down_syndrome');">Down Syndrome</input></label>
+
+    <div id="down_syndrome" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="down_syndrome_slider" 
+	step="1" list="down_syndrome_slider_number" oninput="down_syndrome_slider_value.innerText = this.value">
+	<datalist id="down_syndrome_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="down_syndrome_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Dyscalculia">
+				<input type="checkbox"
+					name="educational_special_needs[]" value="dyscalculia" onchange="showHideSlider(this,'dyscalculia');">Dyscalculia</input></label>
+
+    <div id="dyscalculia" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="dyscalculia_slider" 
+	step="1" list="dyscalculia_slider_number" oninput="dyscalculia_slider_value.innerText = this.value">
+	<datalist id="dyscalculia_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="dyscalculia_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Dysgraphia">
+				<input type="checkbox"
+					name="educational_special_needs[]" value="dysgraphia" onchange="showHideSlider(this,'dysgraphia');">Dysgraphia</input></label>
+
+    <div id="dysgraphia" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="dysgraphia_slider" 
+	step="1" list="dysgraphia_slider_number" oninput="dysgraphia_slider_value.innerText = this.value">
+	<datalist id="dysgraphia_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="dysgraphia_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Dyslexia">
+				<input type="checkbox"
+					name="educational_special_needs[]" value="dyslexia" onchange="showHideSlider(this,'dyslexia');">Dyslexia</input></label>
+
+    <div id="dyslexia" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="dyslexia_slider" 
+	step="1" list="dyslexia_slider_number" oninput="dyslexia_slider_value.innerText = this.value">
+	<datalist id="dyslexia_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="dyslexia_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Fragile "X" Syndrome">
+				<input type="checkbox"
+					name="educational_special_needs[]" value="fragile x syndrome" onchange="showHideSlider(this,'fragile');">Fragile "X" Syndrome</input></label>
+
+    <div id="fragile" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="fragile_slider" 
+	step="1" list="fragile_slider_number" oninput="fragile_slider_value.innerText = this.value">
+	<datalist id="fragile_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="fragile_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Language Processing Disorder">
+				<input type="checkbox"
+					name="educational_special_needs[]" value="language processing disorder" onchange="showHideSlider(this,'language_processing_disorder');">Language Processing Disorder</input></label>
+
+    <div id="language_processing_disorder" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="language_processing_disorder_slider" 
+	step="1" list="language_processing_disorder_slider_slider" oninput="language_processing_disorder_slider_value.innerText = this.value">
+	<datalist id="language_processing_disorder_slider_slider">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="language_processing_disorder_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Mental Retardation">
+				<input type="checkbox"
+					name="educational_special_needs[]" value="mental retardation" onchange="showHideSlider(this,'mental_retardation');">Mental Retardation</input></label>
+
+    <div id="mental_retardation" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="mental_retardation_slider" 
+	step="1" list="mental_retardation_slider_number" oninput="mental_retardation_slider_value.innerText = this.value">
+	<datalist id="mental_retardation_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="mental_retardation_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Nonverbal Learning Disabilities">
+				<input type="checkbox"
+					name="educational_special_needs[]" value="nonverbal learning disabilities" onchange="showHideSlider(this,'nonverbal_learning_disabilities');">Nonverbal Learning Disabilities</input></label>
+
+    <div id="nonverbal_learning_disabilities" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="nonverbal_learning_disabilities_slider" 
+	step="1" list="nonverbal_learning_disabilities_slider_number" oninput="nonverbal_learning_disabilities_slider_value.innerText = this.value">
+	<datalist id="nonverbal_learning_disabilities_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="nonverbal_learning_disabilities_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Oppositional Defiant Disorder">
+				<input type="checkbox"
+					name="educational_special_needs[]" value="oppositional defiant disorder" onchange="showHideSlider(this,'oppositional_defiant_disorder');">Oppositional Defiant Disorder</input></label>
+
+    <div id="oppositional_defiant_disorder" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="oppositional_defiant_disorder_slider" 
+	step="1" list="oppositional_defiant_disorder_slider_number" oninput="oppositional_defiant_disorder_slider_value.innerText = this.value">
+	<datalist id="oppositional_defiant_disorder_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="oppositional_defiant_disorder_slider_value">0</label>
+	</div>
+    </div>
+
+			<label for="Visual Perceptual/Visual Motor Deficit">
+				<input type="checkbox"
+					name="educational_special_needs[]" value="visual perceptual/visual motor deficit" onchange="showHideSlider(this,'visual');">Visual Perceptual/Visual Motor Deficit</input></label>
+
+    <div id="visual" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="10" max="5" value="0" id="visual_slider" 
+	step="1" list="visual_slider_number" oninput="visual_slider_value.innerText = this.value">
+	<datalist id="visual_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="visual_slider_value">0</label>
+	</div>
+    </div>
+
+</div>
+
+		<div class="form-control">
+			<label>Do you have any experience with any of the following addictions, behaviors, risk factors, or habits?
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="Alcoholism">
+				<input type="checkbox"
+					name="addiction_behavior_habits[]" value="alcoholism" onchange="showHideSlider(this,'alcoholism');">Alcoholism</input></label>
+
+    <div id="alcoholism" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="alcoholism_slider" 
+	step="1" list="alcoholism_slider_number" oninput="alcoholism_slider_value.innerText = this.value">
+	<datalist id="alcoholism_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="alcoholism_slider_value">0</label>
+	</div>
+    </div>
+
+
+
+            <label for="Being Overweight">
+				<input type="checkbox"
+					name="addiction_behavior_habits[]" value="being overweight" onchange="showHideSlider(this,'overweight');">Being Overweight</input></label>
+
+    <div id="overweight" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="overweight_slider" 
+	step="1" list="overweight_slider_number" oninput="overweight_slider_value.innerText = this.value">
+	<datalist id="overweight_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="overweight_slider_value">0</label>
+	</div>
+    </div>
+
+
+			<label for="Drug use">
+				<input type="checkbox"
+					name="addiction_behavior_habits[]" value="drug use" onchange="showHideSlider(this,'drug_use');">Drug use</input></label>
+
+    <div id="drug_use" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="drug_use_slider" 
+	step="1" list="drug_use_slider_number" oninput="drug_use_slider_value.innerText = this.value">
+	<datalist id="drug_use_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="drug_use_slider_value">0</label>
+	</div>
+    </div>
+
+
+			<label for="Gambling">
+				<input type="checkbox"
+					name="addiction_behavior_habits[]" value="gambling" onchange="showHideSlider(this,'gambling');">Gambling</input></label>
+
+    <div id="gambling" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="gambling_slider" 
+	step="1" list="gambling_slider_number" oninput="gambling_slider_value.innerText = this.value">
+	<datalist id="gambling_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="gambling_slider_value">0</label>
+	</div>
+    </div>
+
+
+			<label for="Physical Inactivity">
+				<input type="checkbox"
+					name="addiction_behavior_habits[]" value="physical inactivity" onchange="showHideSlider(this,'physical_inactivity');">Physical Inactivity</input></label>
+
+    <div id="physical_inactivity" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="physical_inactivity_slider" 
+	step="1" list="physical_inactivity_slider_number" oninput="physical_inactivity_slider_value.innerText = this.value">
+	<datalist id="physical_inactivity_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="physical_inactivity_slider_value">0</label>
+	</div>
+    </div>
+
+
+			<label for="Smoking/Tobacco use">
+				<input type="checkbox"
+					name="addiction_behavior_habits[]" value="smoking/tobacco use" onchange="showHideSlider(this,'smoking');">Smoking/Tobacco use</input></label>
+
+    <div id="smoking" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="smoking_slider" 
+	step="1" list="smoking_slider_number" oninput="smoking_slider_value.innerText = this.value">
+	<datalist id="smoking_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="smoking_slider_value">0</label>
+	</div>
+    </div>
+
+
+			<label for="Unhealthy diet">
+				<input type="checkbox"
+					name="addiction_behavior_habits[]" value="unhealthy diet" onchange="showHideSlider(this,'unhealthy_diet');">Unhealthy diet</input></label>
+	
+    <div id="unhealthy_diet" style="display:none;">
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="unhealthy_diet_slider" 
+	step="1" list="unhealthy_diet_slider_number" oninput="unhealthy_diet_slider_value.innerText = this.value">
+	<datalist id="unhealthy_diet_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="unhealthy_diet_slider_value">0</label>
+	</div>
+    </div>
+
+
+		<label for="Other">
+				<input type="checkbox"
+					name="addiction_behavior_habits[]" value="other" onchange="showHide(this,'otherAddictive');">Other</input></label>
+		</div>
+
+		<!-- SECOND FORM -->
+    <div id="otherAddictive" style="display:none;">
+		<div class="form-control">
+			<label for="other_addiction_behavior_habits">
+				What other types of addiction, behaviors, habits, or risk factors do/have you or someone you care for experienced
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="other_addiction_behavior_habits" id="other_addiction_behavior_habits"
+				placeholder="" name="other_addiction_behavior_habits">
+			</textarea>
+		</div>
+    
+	<div class="slider">
+		<label> How much of an impact has this had on you? 
+			<small>(5 being the most impactful and 0 being the least)</small></label> 
+	<input type="range" min="0" max="5" value="0" id="otherAddictive_slider" 
+	step="1" list="otherAddictive_slider_number" oninput="otherAddictive_slider_value.innerText = this.value">
+	<datalist id="otherAddictive_slider_number">
+    <option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</datalist>
+	<label id="otherAddictive_slider_value">0</label>
+	</div>
+    </div>
+
+
+
+
+		<div class="form-control">
+			<label for="other_health_condition_unlisted">
+				What other health conditions not previously listed do you have experience with?
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="other_health_condition_unlisted" id="other_health_condition_unlisted"
+				placeholder="" name="other_health_condition_unlisted">
+			</textarea>
+		</div>
+
+
+		<!-- -->
+
+		<div class="form-control">
+			<label for="healthcare_challenges">
+				What challenges, if any, have you faced in receiving healthcare care during your lifetime?
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="healthcare_challenges" id="healthcare_challenges"
+				placeholder="" name="healthcare_challenges">
+			</textarea>
+		</div>
+
+		<div class="form-control">
+			<label for="personal_info">
+				What do you think researchers/PES leadership should know about you and your life experiences? (Including who you are and the different roles you have [are you a parent, man/woman, caregiver, etc.] and experiences you have had that impact the way you think or behave.)
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="personal_info" id="personal_info"
+				placeholder="" name="personal_info">
+			</textarea>
+		</div>
+
+		<div class="form-control">
+			<label for="topics_of_interest">
+				What topics interest you most? This can include research, healthcare, hobbies, or other topics.
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="topics_of_interest" id="topics_of_interest"
+				placeholder="" name="topics_of_interest">
+			</textarea>
+		</div>
+
+		<div class="form-control">
+			<label>
+				Would you be interested in sharing some of your story on the PES website? (This information will not come from this survey, but will be collected directly from you and be approved by you before it is shared to the website. You can change your mind at any time.)
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="share_your_story">
+				<input type="radio"
+					id="share_your_story"
+					name="share_your_story" value="yes">Yes</input>
+			</label>
+			<label for="share_your_story">
+				<input type="radio"
+					id="share_your_story"
+					name="share_your_story" value="no">No</input>
+			</label>
+		</div>
+
+		<!-- Multi-line Text Input Control -->
+		<button type="submit" value="submit">
+			Submit
+		</button>
+	</form>
+
+<script>
+    
+    function fosterCare(rb) {
+        if (rb.id=="yes_in_foster_care") {
+            document.getElementById("fosterCare").style.display = "flex";
+        } else {
+            document.getElementById("fosterCare").style.display = "none";
+        }
+    }
+    
+    function showHideParent(rb) {
+        if (rb.id=="yes_parent") {
+            document.getElementById("parent").style.display = "flex";
+        } else {
+            document.getElementById("parent").style.display = "none";
+        }
+    }
+    
+    function showHideNoIns(rb) {
+        if (rb.id=="yes_ever_without_insurance") {
+            document.getElementById("timeNoIns").style.display = "flex";
+        }  else {
+             document.getElementById("timeNoIns").style.display = "none";
+        }
+    }
+    
+    function unemployment(rb) {
+        if (rb.id == "yes_extended_unemployment") {
+            document.getElementById("unemployment").style.display = "flex";
+        }  else {
+            document.getElementById("unemployment").style.display = "none";
+        }
+    }
+    
+    function showHideNumberOfYears(rb) {
+        if ((rb.id == "yes_current_live_rural") || (rb.id == "yes_ever_live_rural")) {
+            document.getElementById("yearsLiveRural").style.display = "flex";
+        } else {
+            document.getElementById("yearsLiveRural").style.display = "none";
+        }
+    }
+    
+    function showHideReligiousIdentity(rb) {
+        
+        if (rb.id == "other") {
+            document.getElementById("otherReligiousIdentity").style.display = "flex";
+        } else {
+            document.getElementById("otherReligiousIdentity").style.display = "none";
+        }
+    }
+    
+    function showOutsideUS() {
+        document.getElementById("outsideUS").style.display = "flex";
+    }
+    function hideOutsideUS() {
+        document.getElementById("outsideUS").style.display = "none";
+    }
+
+    function showStates() {
+        document.getElementById("states").style.display = "flex";
+    }
+    function hideStates() {
+        document.getElementById("states").style.display = "none";
+    }
+    
+function showHideSlider(cb, sldr) {
+         if (cb.checked) {
+            document.getElementById(sldr).style.display = "flex";
+         } else {
+            document.getElementById(sldr).style.display = "none";
+         }
+      }
+    
+    function showHide(cb, elementID) {
+        if (cb.checked) {
+            document.getElementById(elementID).style.display = "flex";
+        } else {
+            document.getElementById(elementID).style.display = "none";
+        }
+    }
+</script>
+</body>
+
+</html>
